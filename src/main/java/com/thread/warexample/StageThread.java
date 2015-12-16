@@ -1,55 +1,55 @@
 package com.thread.warexample;
 
 /**
- * ÎèÌ¨Àà
+ * èˆå°ç±»
  */
 public class StageThread extends Thread {
 
 	@Override
 	public void run() {
 		try {
-			System.out.println("»¶Ó­¹Û¿´ËåÌÆÑİÒï");
+			System.out.println("æ¬¢è¿è§‚çœ‹éš‹å”æ¼”ç»");
 
 			Thread.sleep(5000);
 
-			// Ëå³¯¾ü¶Ó
+			// éš‹æœå†›é˜Ÿ
 			ArmyRunnable armyTasksui = new ArmyRunnable();
-			// ÆğÒå¾ü¶Ó
+			// èµ·ä¹‰å†›é˜Ÿ
 			ArmyRunnable armyTaskfan = new ArmyRunnable();
 
-			// Ê¹ÓÃrunnable½Ó¿Ú´´½¨¾ü¶Ó½ø³Ì
-			Thread armysui = new Thread(armyTasksui, "Ëå¾ü");
-			Thread armyfan = new Thread(armyTaskfan, "ÆğÒå¾ü");
+			// ä½¿ç”¨runnableæ¥å£åˆ›å»ºå†›é˜Ÿè¿›ç¨‹
+			Thread armysui = new Thread(armyTasksui, "éš‹å†›");
+			Thread armyfan = new Thread(armyTaskfan, "èµ·ä¹‰å†›");
 
-			// Æô¶¯½ø³Ì£¬ÈÃ¾ü¶Ó¿ªÊ¼×÷Õ½
+			// å¯åŠ¨è¿›ç¨‹ï¼Œè®©å†›é˜Ÿå¼€å§‹ä½œæˆ˜
 			armysui.start();
 			armyfan.start();
 
-			// ÎèÌ¨Ïß³ÌĞİÃß£¬×¨ĞÄ¿´¾ü¶ÓØËÉ±
+			// èˆå°çº¿ç¨‹ä¼‘çœ ï¼Œä¸“å¿ƒçœ‹å†›é˜Ÿå®æ€
 			Thread.sleep(50);
 
-			// µ÷ÓÃÒ»¸öÏß³ÌµÄjoin·½·¨£¬½áÊø½ø³Ì
+			// è°ƒç”¨ä¸€ä¸ªçº¿ç¨‹çš„joinæ–¹æ³•ï¼Œç»“æŸè¿›ç¨‹
 //			armyfan.join();
 
-			System.out.println("Ë«·½¼¤Õ½Õıº¨£¬°ëÂ·É±³ö¸ö³ÌÒ§½ğ");
+			System.out.println("åŒæ–¹æ¿€æˆ˜æ­£é…£ï¼ŒåŠè·¯æ€å‡ºä¸ªç¨‹å’¬é‡‘");
 
 			Thread cheng = new KeyPersonThread();
-			cheng.setName("³ÌÒ§½ğ");
-			System.out.println("³ÌÒ§½ğµÄ±¨¸´ÊÇ£¬½áÊøÕ½Õù");
+			cheng.setName("ç¨‹å’¬é‡‘");
+			System.out.println("ç¨‹å’¬é‡‘çš„æŠ¥å¤æ˜¯ï¼Œç»“æŸæˆ˜äº‰");
 
-			// ÈÃ¾ü¶ÓÍ£Ö¹ØËÉ±£¬Í£Ö¹Ïß³Ì
+			// è®©å†›é˜Ÿåœæ­¢å®æ€ï¼Œåœæ­¢çº¿ç¨‹
 			armyTasksui.keepRunning = false;
 			armyTaskfan.keepRunning = false;
 			Thread.sleep(2000);
 
-			// ÎèÌ¨¸ø¹Ø¼üÈÎÎñ
+			// èˆå°ç»™å…³é”®ä»»åŠ¡
 			cheng.start();
 
-			// µÇÌ¨³ÌÒ§½ğÍê³ÉÏß³Ì
+			// ç™»å°ç¨‹å’¬é‡‘å®Œæˆçº¿ç¨‹
 			cheng.join();
 
-			System.out.println("½áÊøÕ½Õù£¬°ÙĞÕ°²¾ÓÀÖÒµ");
-			System.out.println("Ğ»Ğ»¹Û¿´");
+			System.out.println("ç»“æŸæˆ˜äº‰ï¼Œç™¾å§“å®‰å±…ä¹ä¸š");
+			System.out.println("è°¢è°¢è§‚çœ‹");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

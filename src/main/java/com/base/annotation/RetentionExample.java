@@ -9,13 +9,13 @@ public class RetentionExample {
 	
 	
 	/*
-	 * ×÷ÓÃ£º±íÊ¾ÐèÒªÔÚÊ²Ã´¼¶±ð±£´æ¸Ã×¢ÊÍÐÅÏ¢£¬ÓÃÓÚÃèÊö×¢½âµÄÉúÃüÖÜÆÚ£¨¼´£º±»ÃèÊöµÄ×¢½âÔÚÊ²Ã´·¶Î§ÄÚÓÐÐ§£©
+	 * ä½œç”¨ï¼šè¡¨ç¤ºéœ€è¦åœ¨ä»€ä¹ˆçº§åˆ«ä¿å­˜è¯¥æ³¨é‡Šä¿¡æ¯ï¼Œç”¨äºŽæè¿°æ³¨è§£çš„ç”Ÿå‘½å‘¨æœŸï¼ˆå³ï¼šè¢«æè¿°çš„æ³¨è§£åœ¨ä»€ä¹ˆèŒƒå›´å†…æœ‰æ•ˆï¼‰
 	 
-	 È¡Öµ£¨RetentionPoicy£©ÓÐ£º
+	 å–å€¼ï¼ˆRetentionPoicyï¼‰æœ‰ï¼š
 
-¡¡¡¡¡¡¡¡1.SOURCE:ÔÚÔ´ÎÄ¼þÖÐÓÐÐ§£¨¼´Ô´ÎÄ¼þ±£Áô£©
-¡¡¡¡¡¡¡¡2.CLASS:ÔÚclassÎÄ¼þÖÐÓÐÐ§£¨¼´class±£Áô£©
-¡¡¡¡¡¡¡¡3.RUNTIME:ÔÚÔËÐÐÊ±ÓÐÐ§£¨¼´ÔËÐÐÊ±±£Áô£©
+ã€€ã€€ã€€ã€€1.SOURCE:åœ¨æºæ–‡ä»¶ä¸­æœ‰æ•ˆï¼ˆå³æºæ–‡ä»¶ä¿ç•™ï¼‰
+ã€€ã€€ã€€ã€€2.CLASS:åœ¨classæ–‡ä»¶ä¸­æœ‰æ•ˆï¼ˆå³classä¿ç•™ï¼‰
+ã€€ã€€ã€€ã€€3.RUNTIME:åœ¨è¿è¡Œæ—¶æœ‰æ•ˆï¼ˆå³è¿è¡Œæ—¶ä¿ç•™ï¼‰
 	 */
 	@Target(ElementType.FIELD)
 	@Retention(RetentionPolicy.RUNTIME)
@@ -25,5 +25,5 @@ public class RetentionExample {
 	    public String getFuncName() default "getField"; 
 	    public boolean defaultDBValue() default false;
 	}
-	//Column×¢½âµÄµÄRetentionPolicyµÄÊôÐÔÖµÊÇRUTIME,ÕâÑù×¢½â´¦ÀíÆ÷¿ÉÒÔÍ¨¹ý·´Éä£¬»ñÈ¡µ½¸Ã×¢½âµÄÊôÐÔÖµ£¬´Ó¶øÈ¥×öÒ»Ð©ÔËÐÐÊ±µÄÂß¼­´¦Àí
+	//Columnæ³¨è§£çš„çš„RetentionPolicyçš„å±žæ€§å€¼æ˜¯RUTIME,è¿™æ ·æ³¨è§£å¤„ç†å™¨å¯ä»¥é€šè¿‡åå°„ï¼ŒèŽ·å–åˆ°è¯¥æ³¨è§£çš„å±žæ€§å€¼ï¼Œä»Žè€ŒåŽ»åšä¸€äº›è¿è¡Œæ—¶çš„é€»è¾‘å¤„ç†
 }

@@ -1,26 +1,26 @@
 package com.thread.warexample;
 
 /**
- * ¾ü¶ÓÏß³ÌÀà<br/>
- * Ä£Äâ×÷Õ½Ë«·½µÄĞĞÎª
+ * å†›é˜Ÿçº¿ç¨‹ç±»<br/>
+ * æ¨¡æ‹Ÿä½œæˆ˜åŒæ–¹çš„è¡Œä¸º
  */
 public class ArmyRunnable implements Runnable{
 
-	//volatile±£Ö¤ÁËÏß³Ì¿ÉÒÔÕıÈ·¶ÁÈ¡ÆäËûÏß³ÌĞ´ÈëµÄÖµ
+	//volatileä¿è¯äº†çº¿ç¨‹å¯ä»¥æ­£ç¡®è¯»å–å…¶ä»–çº¿ç¨‹å†™å…¥çš„å€¼
 	volatile boolean keepRunning=true;
 
 	@Override
 	public void run() {
 		while(keepRunning){
-			//·¢¶¯5Á¬»÷
+			//å‘åŠ¨5è¿å‡»
 			for(int i=0;i<5;i++){
-				System.out.println(Thread.currentThread().getName()+"½ø¹¥¶Ô·½["+i+"]");
+				System.out.println(Thread.currentThread().getName()+"è¿›æ”»å¯¹æ–¹["+i+"]");
 				
-				//Í¨¹ıÕâ¸ö·½·¨£¬ÈÃ³öÁË´¦ÀíÆ÷Ê±¼ä¡£ËùÓĞ½ø³ÌÖØĞÂÕù¶ácpu£¬ÏÂ´ÎË­½ø¹¥²»Ò»¶¨
+				//é€šè¿‡è¿™ä¸ªæ–¹æ³•ï¼Œè®©å‡ºäº†å¤„ç†å™¨æ—¶é—´ã€‚æ‰€æœ‰è¿›ç¨‹é‡æ–°äº‰å¤ºcpuï¼Œä¸‹æ¬¡è°è¿›æ”»ä¸ä¸€å®š
 				Thread.yield();
 			}
 		}
-		System.out.println(Thread.currentThread().getName()+"½áÊøÕ½¶·£¡");
+		System.out.println(Thread.currentThread().getName()+"ç»“æŸæˆ˜æ–—ï¼");
 	}
 	
 

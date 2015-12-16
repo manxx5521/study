@@ -4,11 +4,11 @@ public class KeyPersonThread extends Thread {
 
 	@Override
 	public void run() {
-		System.out.println(getName()+"¿ªÊ¼Õ½¶·ÁË£¡");
+		System.out.println(getName()+"å¼€å§‹æˆ˜æ–—äº†ï¼");
 		for(int i=0;i<10;i++){
-			System.out.println(getName()+"×óÍ»ÓÒÉ±£¬¹¥»÷Ëå¾ü...");
+			System.out.println(getName()+"å·¦çªå³æ€ï¼Œæ”»å‡»éš‹å†›...");
 		}
-		System.out.println(getName()+"½áÊøÕ½¶·£¡");
+		System.out.println(getName()+"ç»“æŸæˆ˜æ–—ï¼");
 	}
 	
 	

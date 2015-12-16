@@ -9,8 +9,8 @@ import java.lang.annotation.Target;
 public class DocumentedExample {
 	
 	/*
-	 *DocumentedÓÃÓÚÃèÊöÆäËüÀàĞÍµÄannotationÓ¦¸Ã±»×÷Îª±»±ê×¢µÄ³ÌĞò³ÉÔ±µÄ¹«¹²API£¬Òò´Ë¿ÉÒÔ±»ÀıÈçjavadoc´ËÀàµÄ¹¤¾ßÎÄµµ»¯¡£
-	 *DocumentedÊÇÒ»¸ö±ê¼Ç×¢½â£¬Ã»ÓĞ³ÉÔ±¡£ 
+	 *Documentedç”¨äºæè¿°å…¶å®ƒç±»å‹çš„annotationåº”è¯¥è¢«ä½œä¸ºè¢«æ ‡æ³¨çš„ç¨‹åºæˆå‘˜çš„å…¬å…±APIï¼Œå› æ­¤å¯ä»¥è¢«ä¾‹å¦‚javadocæ­¤ç±»çš„å·¥å…·æ–‡æ¡£åŒ–ã€‚
+	 *Documentedæ˜¯ä¸€ä¸ªæ ‡è®°æ³¨è§£ï¼Œæ²¡æœ‰æˆå‘˜ã€‚ 
 	 * */
 	@Target(ElementType.FIELD)
 	@Retention(RetentionPolicy.RUNTIME)

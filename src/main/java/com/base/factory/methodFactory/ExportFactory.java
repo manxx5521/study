@@ -1,13 +1,13 @@
 package com.base.factory.methodFactory;
 
 /**
- * ¹¤³§·½·¨<br>
- * ËùÓĞµÄ¾ßÌå¹¤³§½ÇÉ«¶¼ĞèÒªÊµÏÖÕâ¸ö½Ó¿Ú
+ * å·¥å‚æ–¹æ³•<br>
+ * æ‰€æœ‰çš„å…·ä½“å·¥å‚è§’è‰²éƒ½éœ€è¦å®ç°è¿™ä¸ªæ¥å£
  */
 public interface ExportFactory {
 	/**
-	 * µ¼³ö·½·¨
-	 * @param type µ¼³öµÄÀàĞÍ
+	 * å¯¼å‡ºæ–¹æ³•
+	 * @param type å¯¼å‡ºçš„ç±»å‹
 	 * @return
 	 */
 	public ExportFile factory(String type);

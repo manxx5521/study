@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * ¾²Ì¬³ÉÔ±±äÁ¿Àà
+ * é™æ€æˆå‘˜å˜é‡ç±»
  */
 public class SFTPConstants {
 
@@ -20,7 +20,7 @@ public class SFTPConstants {
 	private int sftp_timeout = 60000;
 
 	/**
-	 * Ë½ÓĞ¹¹Ôì·½·¨£¬ÓÃÀ´³õÊ¼»¯±äÁ¿
+	 * ç§æœ‰æ„é€ æ–¹æ³•ï¼Œç”¨æ¥åˆå§‹åŒ–å˜é‡
 	 * 
 	 * @throws IOException
 	 */
@@ -32,7 +32,7 @@ public class SFTPConstants {
 		try {
 			sftp_port = Integer.parseInt(p.getProperty("port").trim());
 		} catch (NumberFormatException e) {
-			// Èç¹û×ª»»³öÏÖÒì³££¬²»×öÈÎºÎ²Ù×÷ 
+			// å¦‚æœè½¬æ¢å‡ºç°å¼‚å¸¸ï¼Œä¸åšä»»ä½•æ“ä½œ 
 		}
 		sftp_username = p.getProperty("username").trim();
 		sftp_password = p.getProperty("password").trim();
@@ -41,13 +41,13 @@ public class SFTPConstants {
 		try {
 			sftp_timeout = Integer.parseInt(p.getProperty("timeout").trim());
 		} catch (NumberFormatException e) {
-			// Èç¹û×ª»»³öÏÖÒì³££¬²»×öÈÎºÎ²Ù×÷ 
+			// å¦‚æœè½¬æ¢å‡ºç°å¼‚å¸¸ï¼Œä¸åšä»»ä½•æ“ä½œ 
 		}
-		System.out.println("±äÁ¿³õÊ¼»¯----------");
+		System.out.println("å˜é‡åˆå§‹åŒ–----------");
 	}
 
 	/**
-	 * Î¨Ò»»ñµÃÊµÀıµÄ·½·¨
+	 * å”¯ä¸€è·å¾—å®ä¾‹çš„æ–¹æ³•
 	 * 
 	 * @throws Exception
 	 */

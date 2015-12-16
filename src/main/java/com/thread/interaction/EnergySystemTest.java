@@ -3,9 +3,9 @@ package com.thread.interaction;
 
 public class EnergySystemTest {
 
-	//将要构建的能量世界中能量盒子数量
+	//灏嗚鏋勫缓鐨勮兘閲忎笘鐣屼腑鑳介噺鐩掑瓙鏁伴噺
 	public static final int BOX_AMOUNT = 100;
-	//每个盒子初始能量
+	//姣忎釜鐩掑瓙鍒濆鑳介噺
     public static final double INITIAL_ENERGY = 1000;
 
     public static void main(String[] args){

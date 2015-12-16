@@ -1,14 +1,14 @@
 package com.base.factory.methodFactory;
 
 /**
- * ¾ßÌåµÄµ¼³ö¹¤³§½ÇÉ«<br>
- *	µ¼³öhtmlÊı¾İ
+ * å…·ä½“çš„å¯¼å‡ºå·¥å‚è§’è‰²<br>
+ *	å¯¼å‡ºhtmlæ•°æ®
  */
 public class ExportHtmlFactory implements ExportFactory{
 	
 	/**
-	 * ´´½¨µ¼³ö½ÇÉ«Àà<br>
-	 * ¸ù¾İ´«ÈëµÄtypeÅĞ¶ÏÊÇ·ñÒª¸ù¾İ²ÆÎñÒªÇó¸ñÊ½»¯
+	 * åˆ›å»ºå¯¼å‡ºè§’è‰²ç±»<br>
+	 * æ ¹æ®ä¼ å…¥çš„typeåˆ¤æ–­æ˜¯å¦è¦æ ¹æ®è´¢åŠ¡è¦æ±‚æ ¼å¼åŒ–
 	 */
     @Override
     public ExportFile factory(String type) {
@@ -22,7 +22,7 @@ public class ExportHtmlFactory implements ExportFactory{
             return new ExportFinancialHtmlFile();
             
         }else{
-            throw new RuntimeException("Ã»ÓĞÕÒµ½¶ÔÏó");
+            throw new RuntimeException("æ²¡æœ‰æ‰¾åˆ°å¯¹è±¡");
         }
     }
 

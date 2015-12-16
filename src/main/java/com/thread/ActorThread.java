@@ -1,30 +1,30 @@
 package com.thread;
 
 /**
- * ÑİÔ±Àà<br/>
- * Í¨¹ı¼Ì³ĞThreadÀà»ñµÃ½ø³Ì
+ * æ¼”å‘˜ç±»<br/>
+ * é€šè¿‡ç»§æ‰¿Threadç±»è·å¾—è¿›ç¨‹
  */
 public class ActorThread extends Thread {
 
 	@Override
 	public void run() {
 		
-		//getName»ñµÃµÄÊÇThreadµÄ±äÁ¿Ïß³ÌÃû
-		System.out.println(getName()+"ÊÇÒ»¸öÑİÔ±");
+		//getNameè·å¾—çš„æ˜¯Threadçš„å˜é‡çº¿ç¨‹å
+		System.out.println(getName()+"æ˜¯ä¸€ä¸ªæ¼”å‘˜");
 		
-		//ÓÃÀ´¼ÇÂ¼Ñİ³ö´ÎÊı
+		//ç”¨æ¥è®°å½•æ¼”å‡ºæ¬¡æ•°
 		int count=0;
 		boolean keepRunning=true;
 		while(keepRunning){
-			System.out.println(getName()+"µÇÌ¨Ñİ³ö£º"+(++count));
+			System.out.println(getName()+"ç™»å°æ¼”å‡ºï¼š"+(++count));
 			if(count==100){
 				keepRunning=false;
 			}
 			
-			//Ã»µ±ÊÇ10µÄ±¶Êı
+			//æ²¡å½“æ˜¯10çš„å€æ•°
 			if(count%10==0){
 				try {
-					//Ë¯Ãß1Ãë
+					//ç¡çœ 1ç§’
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -33,6 +33,6 @@ public class ActorThread extends Thread {
 		}
 		
 		
-		System.out.println(getName()+"µÄÑİ³ö½áÊø");
+		System.out.println(getName()+"çš„æ¼”å‡ºç»“æŸ");
 	}
 }

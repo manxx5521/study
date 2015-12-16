@@ -1,7 +1,7 @@
 package com.module;
 
 /**
- * °üÃèÊö-×é¼ş°ü
+ * åŒ…æè¿°-ç»„ä»¶åŒ…
  */
 public class Describe {
 

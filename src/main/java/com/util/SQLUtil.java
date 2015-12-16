@@ -2,9 +2,9 @@ package com.util;
 
 public class SQLUtil {
 	/**
-	 * Êä³öĞéÄâÁĞ--ÓÃÓÚ±¨±í»­½çÃæ
-	 * @param size SQLĞéÄâÁĞ´óĞ¡
-	 * @return String SQL×Ö·û´®
+	 * è¾“å‡ºè™šæ‹Ÿåˆ—--ç”¨äºæŠ¥è¡¨ç”»ç•Œé¢
+	 * @param size SQLè™šæ‹Ÿåˆ—å¤§å°
+	 * @return String SQLå­—ç¬¦ä¸²
 	 * */
 	public static String printSql(Integer size){
 		String str="SELECT ";

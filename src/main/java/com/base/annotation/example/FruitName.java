@@ -7,11 +7,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Ë®¹ûÃû³Æ×¢½â
+ * æ°´æœåç§°æ³¨è§£
  */
-@Target(ElementType.FIELD)  //ÃèÊöÓò
-@Retention(RetentionPolicy.RUNTIME)  //ÔËĞĞÊ±ÓĞĞ§
-@Documented		//¿ÉÒÔ±»ÎÄµµ»¯
+@Target(ElementType.FIELD)  //æè¿°åŸŸ
+@Retention(RetentionPolicy.RUNTIME)  //è¿è¡Œæ—¶æœ‰æ•ˆ
+@Documented		//å¯ä»¥è¢«æ–‡æ¡£åŒ–
 public @interface FruitName {
     String value() default "";
 }

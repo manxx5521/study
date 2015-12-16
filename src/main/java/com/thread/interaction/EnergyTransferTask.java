@@ -3,13 +3,13 @@ package com.thread.interaction;
 
 public class EnergyTransferTask implements Runnable{
 
-	//¹²ÏíµÄÄÜÁ¿ÊÀ½ç
+	//å…±äº«çš„èƒ½é‡ä¸–ç•Œ
 	private EnergySystem energySystem;
-	//ÄÜÁ¿×ªÒÆµÄÔ´ÄÜÁ¿ºĞ×ÓÏÂ±ê
+	//èƒ½é‡è½¬ç§»çš„æºèƒ½é‡ç›’å­ä¸‹æ ‡
 	private int fromBox;
-	//µ¥´ÎÄÜÁ¿×ªÒÆ×î´óµ¥Ôª
+	//å•æ¬¡èƒ½é‡è½¬ç§»æœ€å¤§å•å…ƒ
 	private double maxAmount;
-	//×î´óĞİÃßÊ±¼ä£¨ºÁÃë£©
+	//æœ€å¤§ä¼‘çœ æ—¶é—´ï¼ˆæ¯«ç§’ï¼‰
 	private int DELAY = 10;
 	
 	public EnergyTransferTask(EnergySystem energySystem, int from, double max){

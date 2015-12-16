@@ -1,12 +1,12 @@
 package com.base.factory.abstrFactory;
 
 /**
- * 主板接口
+ * 涓绘澘鎺ュ彛
  */
 public interface Mainboard {
 	
 	/**
-	 * 用来显示主板信息
+	 * 鐢ㄦ潵鏄剧ず涓绘澘淇℃伅
 	 */
 	 public void installCPU();
 }

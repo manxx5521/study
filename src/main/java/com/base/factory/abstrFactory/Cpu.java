@@ -1,12 +1,12 @@
 package com.base.factory.abstrFactory;
 
 /**
- * cpu½Ó¿ÚÀà
+ * cpuæ¥å£ç±»
  */
 public interface Cpu {
 	
 	/**
-	 * ÓÃÀ´ÏÔÊ¾cpuµÄÒ»Ğ©ĞÅÏ¢
+	 * ç”¨æ¥æ˜¾ç¤ºcpuçš„ä¸€äº›ä¿¡æ¯
 	 */
 	public void calculate();
 }

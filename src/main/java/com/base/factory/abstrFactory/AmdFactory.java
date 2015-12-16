@@ -1,7 +1,7 @@
 package com.base.factory.abstrFactory;
 
 /**
- * 创建AMD家族的工厂类
+ * 鍒涘缓AMD瀹舵棌鐨勫伐鍘傜被
  */
 public class AmdFactory implements AbstractFactory {
 

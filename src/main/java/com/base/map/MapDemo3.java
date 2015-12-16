@@ -6,20 +6,20 @@ public class MapDemo3 {
 	public static void main(String[] args) 
 	{
 		Map<String,String> map=new HashMap<String,String>();
-		//Ìí¼ÓÔªËØ
+		//æ·»åŠ å…ƒç´ 
 		map.put("04","zhangsan4");
 		map.put("02","zhangsan2");
 		map.put("01","zhangsan1");
 		map.put("03","zhangsan3");
-		//È¡³öÓ³Éä¹ØÏµ£¬´æÈëSet¼¯ºÏ
+		//å–å‡ºæ˜ å°„å…³ç³»ï¼Œå­˜å…¥Seté›†åˆ
 		Set<Map.Entry<String,String>> entrySet=map.entrySet();
-		//µü´úÆ÷»ñÈ¡Ó³Éä¹ØÏµ
+		//è¿­ä»£å™¨è·å–æ˜ å°„å…³ç³»
 		Iterator<Map.Entry<String,String>> it=entrySet.iterator();
 		while (it.hasNext())
 		{
-			//Map.EntryÖĞ´æµÄÊÇÓ³Éä¹ØÏµ
+			//Map.Entryä¸­å­˜çš„æ˜¯æ˜ å°„å…³ç³»
 			Map.Entry<String,String> me=it.next();
-			//»ñÈ¡¼üºÍÖµ
+			//è·å–é”®å’Œå€¼
 			String key = me.getKey();
 			String value = me.getValue();
 			System.out.println(key+":"+value);

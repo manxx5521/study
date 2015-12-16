@@ -21,84 +21,84 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- * Í¼Æ¬´¦Àí¹¤¾ßÀà£º<br>
- * ¹¦ÄÜ£ºËõ·ÅÍ¼Ïñ¡¢ÇĞ¸îÍ¼Ïñ¡¢Í¼ÏñÀàĞÍ×ª»»¡¢²ÊÉ«×ªºÚ°×¡¢ÎÄ×ÖË®Ó¡¡¢Í¼Æ¬Ë®Ó¡µÈ
+ * å›¾ç‰‡å¤„ç†å·¥å…·ç±»ï¼š<br>
+ * åŠŸèƒ½ï¼šç¼©æ”¾å›¾åƒã€åˆ‡å‰²å›¾åƒã€å›¾åƒç±»å‹è½¬æ¢ã€å½©è‰²è½¬é»‘ç™½ã€æ–‡å­—æ°´å°ã€å›¾ç‰‡æ°´å°ç­‰
  * 
  * @author Administrator
  */
 public class ImageUtils {
 
 	/**
-	 * ¼¸ÖÖ³£¼ûµÄÍ¼Æ¬¸ñÊ½
+	 * å‡ ç§å¸¸è§çš„å›¾ç‰‡æ ¼å¼
 	 */
-	public static String IMAGE_TYPE_GIF = "gif";// Í¼ĞÎ½»»»¸ñÊ½
-	public static String IMAGE_TYPE_JPG = "jpg";// ÁªºÏÕÕÆ¬×¨¼Ò×é
-	public static String IMAGE_TYPE_JPEG = "jpeg";// ÁªºÏÕÕÆ¬×¨¼Ò×é
-	public static String IMAGE_TYPE_BMP = "bmp";// Ó¢ÎÄBitmap£¨Î»Í¼£©µÄ¼òĞ´£¬ËüÊÇWindows²Ù×÷ÏµÍ³ÖĞµÄ±ê×¼Í¼ÏñÎÄ¼ş¸ñÊ½
-	public static String IMAGE_TYPE_PNG = "png";// ¿ÉÒÆÖ²ÍøÂçÍ¼ĞÎ
-	public static String IMAGE_TYPE_PSD = "psd";// PhotoshopµÄ×¨ÓÃ¸ñÊ½Photoshop
+	public static String IMAGE_TYPE_GIF = "gif";// å›¾å½¢äº¤æ¢æ ¼å¼
+	public static String IMAGE_TYPE_JPG = "jpg";// è”åˆç…§ç‰‡ä¸“å®¶ç»„
+	public static String IMAGE_TYPE_JPEG = "jpeg";// è”åˆç…§ç‰‡ä¸“å®¶ç»„
+	public static String IMAGE_TYPE_BMP = "bmp";// è‹±æ–‡Bitmapï¼ˆä½å›¾ï¼‰çš„ç®€å†™ï¼Œå®ƒæ˜¯Windowsæ“ä½œç³»ç»Ÿä¸­çš„æ ‡å‡†å›¾åƒæ–‡ä»¶æ ¼å¼
+	public static String IMAGE_TYPE_PNG = "png";// å¯ç§»æ¤ç½‘ç»œå›¾å½¢
+	public static String IMAGE_TYPE_PSD = "psd";// Photoshopçš„ä¸“ç”¨æ ¼å¼Photoshop
 
 	/**
-	 * ³ÌĞòÈë¿Ú£ºÓÃÓÚ²âÊÔ
+	 * ç¨‹åºå…¥å£ï¼šç”¨äºæµ‹è¯•
 	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// 1-Ëõ·ÅÍ¼Ïñ£º
-		// ·½·¨Ò»£º°´±ÈÀıËõ·Å
-		ImageUtils.scale("e:/abc.jpg", "e:/abc_scale.jpg", 2, true);// ²âÊÔOK
-		// ·½·¨¶ş£º°´¸ß¶ÈºÍ¿í¶ÈËõ·Å
-		ImageUtils.scale2("e:/abc.jpg", "e:/abc_scale2.jpg", 500, 300, true);// ²âÊÔOK
+		// 1-ç¼©æ”¾å›¾åƒï¼š
+		// æ–¹æ³•ä¸€ï¼šæŒ‰æ¯”ä¾‹ç¼©æ”¾
+		ImageUtils.scale("e:/abc.jpg", "e:/abc_scale.jpg", 2, true);// æµ‹è¯•OK
+		// æ–¹æ³•äºŒï¼šæŒ‰é«˜åº¦å’Œå®½åº¦ç¼©æ”¾
+		ImageUtils.scale2("e:/abc.jpg", "e:/abc_scale2.jpg", 500, 300, true);// æµ‹è¯•OK
 
-		// 2-ÇĞ¸îÍ¼Ïñ£º
-		// ·½·¨Ò»£º°´Ö¸¶¨Æğµã×ø±êºÍ¿í¸ßÇĞ¸î
-		ImageUtils.cut("e:/abc.jpg", "e:/abc_cut.jpg", 0, 0, 400, 400);// ²âÊÔOK
-		// ·½·¨¶ş£ºÖ¸¶¨ÇĞÆ¬µÄĞĞÊıºÍÁĞÊı
-		ImageUtils.cut2("e:/abc.jpg", "e:/", 2, 2);// ²âÊÔOK
-		// ·½·¨Èı£ºÖ¸¶¨ÇĞÆ¬µÄ¿í¶ÈºÍ¸ß¶È
-		ImageUtils.cut3("e:/abc.jpg", "e:/", 300, 300);// ²âÊÔOK
+		// 2-åˆ‡å‰²å›¾åƒï¼š
+		// æ–¹æ³•ä¸€ï¼šæŒ‰æŒ‡å®šèµ·ç‚¹åæ ‡å’Œå®½é«˜åˆ‡å‰²
+		ImageUtils.cut("e:/abc.jpg", "e:/abc_cut.jpg", 0, 0, 400, 400);// æµ‹è¯•OK
+		// æ–¹æ³•äºŒï¼šæŒ‡å®šåˆ‡ç‰‡çš„è¡Œæ•°å’Œåˆ—æ•°
+		ImageUtils.cut2("e:/abc.jpg", "e:/", 2, 2);// æµ‹è¯•OK
+		// æ–¹æ³•ä¸‰ï¼šæŒ‡å®šåˆ‡ç‰‡çš„å®½åº¦å’Œé«˜åº¦
+		ImageUtils.cut3("e:/abc.jpg", "e:/", 300, 300);// æµ‹è¯•OK
 
-		// 3-Í¼ÏñÀàĞÍ×ª»»£º
-		ImageUtils.convert("e:/abc.jpg", "GIF", "e:/abc_convert.gif");// ²âÊÔOK
+		// 3-å›¾åƒç±»å‹è½¬æ¢ï¼š
+		ImageUtils.convert("e:/abc.jpg", "GIF", "e:/abc_convert.gif");// æµ‹è¯•OK
 
-		// 4-²ÊÉ«×ªºÚ°×£º
-		ImageUtils.gray("e:/abc.jpg", "e:/abc_gray.jpg");// ²âÊÔOK
+		// 4-å½©è‰²è½¬é»‘ç™½ï¼š
+		ImageUtils.gray("e:/abc.jpg", "e:/abc_gray.jpg");// æµ‹è¯•OK
 
-		// 5-¸øÍ¼Æ¬Ìí¼ÓÎÄ×ÖË®Ó¡£º
-		// ·½·¨Ò»£º
-		ImageUtils.pressText("ÎÒÊÇË®Ó¡ÎÄ×Ö", "e:/abc.jpg", "e:/abc_pressText.jpg",
-				"ËÎÌå", Font.BOLD, Color.white, 80, 0, 0, 0.5f);// ²âÊÔOK
-		// ·½·¨¶ş£º
-		ImageUtils.pressText2("ÎÒÒ²ÊÇË®Ó¡ÎÄ×Ö", "e:/abc.jpg", "e:/abc_pressText2.jpg",
-				"ºÚÌå", 36, Color.white, 80, 0, 0, 0.5f);// ²âÊÔOK
+		// 5-ç»™å›¾ç‰‡æ·»åŠ æ–‡å­—æ°´å°ï¼š
+		// æ–¹æ³•ä¸€ï¼š
+		ImageUtils.pressText("æˆ‘æ˜¯æ°´å°æ–‡å­—", "e:/abc.jpg", "e:/abc_pressText.jpg",
+				"å®‹ä½“", Font.BOLD, Color.white, 80, 0, 0, 0.5f);// æµ‹è¯•OK
+		// æ–¹æ³•äºŒï¼š
+		ImageUtils.pressText2("æˆ‘ä¹Ÿæ˜¯æ°´å°æ–‡å­—", "e:/abc.jpg", "e:/abc_pressText2.jpg",
+				"é»‘ä½“", 36, Color.white, 80, 0, 0, 0.5f);// æµ‹è¯•OK
 
-		// 6-¸øÍ¼Æ¬Ìí¼ÓÍ¼Æ¬Ë®Ó¡£º
+		// 6-ç»™å›¾ç‰‡æ·»åŠ å›¾ç‰‡æ°´å°ï¼š
 		ImageUtils.pressImage("e:/abc2.jpg", "e:/abc.jpg",
-				"e:/abc_pressImage.jpg", 0, 0, 0.5f);// ²âÊÔOK
+				"e:/abc_pressImage.jpg", 0, 0, 0.5f);// æµ‹è¯•OK
 	}
 
 	/**
-	 * Ëõ·ÅÍ¼Ïñ£¨°´±ÈÀıËõ·Å£©
+	 * ç¼©æ”¾å›¾åƒï¼ˆæŒ‰æ¯”ä¾‹ç¼©æ”¾ï¼‰
 	 * 
 	 * @param srcImageFile
-	 *            Ô´Í¼ÏñÎÄ¼şµØÖ·
+	 *            æºå›¾åƒæ–‡ä»¶åœ°å€
 	 * @param result
-	 *            Ëõ·ÅºóµÄÍ¼ÏñµØÖ·
+	 *            ç¼©æ”¾åçš„å›¾åƒåœ°å€
 	 * @param scale
-	 *            Ëõ·Å±ÈÀı
+	 *            ç¼©æ”¾æ¯”ä¾‹
 	 * @param flag
-	 *            Ëõ·ÅÑ¡Ôñ:true ·Å´ó; false ËõĞ¡;
+	 *            ç¼©æ”¾é€‰æ‹©:true æ”¾å¤§; false ç¼©å°;
 	 */
 	public final static void scale(String srcImageFile, String result,
 			int scale, boolean flag) {
 		try {
-			BufferedImage src = ImageIO.read(new File(srcImageFile)); // ¶ÁÈëÎÄ¼ş
-			int width = src.getWidth(); // µÃµ½Ô´Í¼¿í
-			int height = src.getHeight(); // µÃµ½Ô´Í¼³¤
-			if (flag) {// ·Å´ó
+			BufferedImage src = ImageIO.read(new File(srcImageFile)); // è¯»å…¥æ–‡ä»¶
+			int width = src.getWidth(); // å¾—åˆ°æºå›¾å®½
+			int height = src.getHeight(); // å¾—åˆ°æºå›¾é•¿
+			if (flag) {// æ”¾å¤§
 				width = width * scale;
 				height = height * scale;
-			} else {// ËõĞ¡
+			} else {// ç¼©å°
 				width = width / scale;
 				height = height / scale;
 			}
@@ -107,36 +107,36 @@ public class ImageUtils {
 			BufferedImage tag = new BufferedImage(width, height,
 					BufferedImage.TYPE_INT_RGB);
 			Graphics g = tag.getGraphics();
-			g.drawImage(image, 0, 0, null); // »æÖÆËõĞ¡ºóµÄÍ¼
+			g.drawImage(image, 0, 0, null); // ç»˜åˆ¶ç¼©å°åçš„å›¾
 			g.dispose();
-			ImageIO.write(tag, "JPEG", new File(result));// Êä³öµ½ÎÄ¼şÁ÷
+			ImageIO.write(tag, "JPEG", new File(result));// è¾“å‡ºåˆ°æ–‡ä»¶æµ
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * Ëõ·ÅÍ¼Ïñ£¨°´¸ß¶ÈºÍ¿í¶ÈËõ·Å£©
+	 * ç¼©æ”¾å›¾åƒï¼ˆæŒ‰é«˜åº¦å’Œå®½åº¦ç¼©æ”¾ï¼‰
 	 * 
 	 * @param srcImageFile
-	 *            Ô´Í¼ÏñÎÄ¼şµØÖ·
+	 *            æºå›¾åƒæ–‡ä»¶åœ°å€
 	 * @param result
-	 *            Ëõ·ÅºóµÄÍ¼ÏñµØÖ·
+	 *            ç¼©æ”¾åçš„å›¾åƒåœ°å€
 	 * @param height
-	 *            Ëõ·ÅºóµÄ¸ß¶È
+	 *            ç¼©æ”¾åçš„é«˜åº¦
 	 * @param width
-	 *            Ëõ·ÅºóµÄ¿í¶È
+	 *            ç¼©æ”¾åçš„å®½åº¦
 	 * @param bb
-	 *            ±ÈÀı²»¶ÔÊ±ÊÇ·ñĞèÒª²¹°×£ºtrueÎª²¹°×; falseÎª²»²¹°×;
+	 *            æ¯”ä¾‹ä¸å¯¹æ—¶æ˜¯å¦éœ€è¦è¡¥ç™½ï¼štrueä¸ºè¡¥ç™½; falseä¸ºä¸è¡¥ç™½;
 	 */
 	public final static void scale2(String srcImageFile, String result,
 			int height, int width, boolean bb) {
 		try {
-			double ratio = 0.0; // Ëõ·Å±ÈÀı
+			double ratio = 0.0; // ç¼©æ”¾æ¯”ä¾‹
 			File f = new File(srcImageFile);
 			BufferedImage bi = ImageIO.read(f);
 			Image itemp = bi.getScaledInstance(width, height, BufferedImage.SCALE_SMOOTH);
-			// ¼ÆËã±ÈÀı
+			// è®¡ç®—æ¯”ä¾‹
 			if ((bi.getHeight() > height) || (bi.getWidth() > width)) {
 				if (bi.getHeight() > bi.getWidth()) {
 					ratio = (new Integer(height)).doubleValue()
@@ -148,7 +148,7 @@ public class ImageUtils {
 						AffineTransform.getScaleInstance(ratio, ratio), null);
 				itemp = op.filter(bi, null);
 			}
-			if (bb) {// ²¹°×
+			if (bb) {// è¡¥ç™½
 				BufferedImage image = new BufferedImage(width, height,
 						BufferedImage.TYPE_INT_RGB);
 				Graphics2D g = image.createGraphics();
@@ -172,33 +172,33 @@ public class ImageUtils {
 	}
 
 	/**
-	 * Í¼ÏñÇĞ¸î(°´Ö¸¶¨Æğµã×ø±êºÍ¿í¸ßÇĞ¸î)
+	 * å›¾åƒåˆ‡å‰²(æŒ‰æŒ‡å®šèµ·ç‚¹åæ ‡å’Œå®½é«˜åˆ‡å‰²)
 	 * 
 	 * @param srcImageFile
-	 *            Ô´Í¼ÏñµØÖ·
+	 *            æºå›¾åƒåœ°å€
 	 * @param result
-	 *            ÇĞÆ¬ºóµÄÍ¼ÏñµØÖ·
+	 *            åˆ‡ç‰‡åçš„å›¾åƒåœ°å€
 	 * @param x
-	 *            Ä¿±êÇĞÆ¬Æğµã×ø±êX
+	 *            ç›®æ ‡åˆ‡ç‰‡èµ·ç‚¹åæ ‡X
 	 * @param y
-	 *            Ä¿±êÇĞÆ¬Æğµã×ø±êY
+	 *            ç›®æ ‡åˆ‡ç‰‡èµ·ç‚¹åæ ‡Y
 	 * @param width
-	 *            Ä¿±êÇĞÆ¬¿í¶È
+	 *            ç›®æ ‡åˆ‡ç‰‡å®½åº¦
 	 * @param height
-	 *            Ä¿±êÇĞÆ¬¸ß¶È
+	 *            ç›®æ ‡åˆ‡ç‰‡é«˜åº¦
 	 */
 	public final static void cut(String srcImageFile, String result, int x,
 			int y, int width, int height) {
 		try {
-			// ¶ÁÈ¡Ô´Í¼Ïñ
+			// è¯»å–æºå›¾åƒ
 			BufferedImage bi = ImageIO.read(new File(srcImageFile));
-			int srcWidth = bi.getHeight(); // Ô´Í¼¿í¶È
-			int srcHeight = bi.getWidth(); // Ô´Í¼¸ß¶È
+			int srcWidth = bi.getHeight(); // æºå›¾å®½åº¦
+			int srcHeight = bi.getWidth(); // æºå›¾é«˜åº¦
 			if (srcWidth > 0 && srcHeight > 0) {
 				Image image = bi.getScaledInstance(srcWidth, srcHeight,
 						Image.SCALE_DEFAULT);
-				// ËÄ¸ö²ÎÊı·Ö±ğÎªÍ¼ÏñÆğµã×ø±êºÍ¿í¸ß
-				// ¼´: CropImageFilter(int x,int y,int width,int height)
+				// å››ä¸ªå‚æ•°åˆ†åˆ«ä¸ºå›¾åƒèµ·ç‚¹åæ ‡å’Œå®½é«˜
+				// å³: CropImageFilter(int x,int y,int width,int height)
 				ImageFilter cropFilter = new CropImageFilter(x, y, width,
 						height);
 				Image img = Toolkit.getDefaultToolkit().createImage(
@@ -206,9 +206,9 @@ public class ImageUtils {
 				BufferedImage tag = new BufferedImage(width, height,
 						BufferedImage.TYPE_INT_RGB);
 				Graphics g = tag.getGraphics();
-				g.drawImage(img, 0, 0, width, height, null); // »æÖÆÇĞ¸îºóµÄÍ¼
+				g.drawImage(img, 0, 0, width, height, null); // ç»˜åˆ¶åˆ‡å‰²åçš„å›¾
 				g.dispose();
-				// Êä³öÎªÎÄ¼ş
+				// è¾“å‡ºä¸ºæ–‡ä»¶
 				ImageIO.write(tag, "JPEG", new File(result));
 			}
 		} catch (Exception e) {
@@ -217,36 +217,36 @@ public class ImageUtils {
 	}
 
 	/**
-	 * Í¼ÏñÇĞ¸î£¨Ö¸¶¨ÇĞÆ¬µÄĞĞÊıºÍÁĞÊı£©
+	 * å›¾åƒåˆ‡å‰²ï¼ˆæŒ‡å®šåˆ‡ç‰‡çš„è¡Œæ•°å’Œåˆ—æ•°ï¼‰
 	 * 
 	 * @param srcImageFile
-	 *            Ô´Í¼ÏñµØÖ·
+	 *            æºå›¾åƒåœ°å€
 	 * @param descDir
-	 *            ÇĞÆ¬Ä¿±êÎÄ¼ş¼Ğ
+	 *            åˆ‡ç‰‡ç›®æ ‡æ–‡ä»¶å¤¹
 	 * @param rows
-	 *            Ä¿±êÇĞÆ¬ĞĞÊı¡£Ä¬ÈÏ2£¬±ØĞëÊÇ·¶Î§ [1, 20] Ö®ÄÚ
+	 *            ç›®æ ‡åˆ‡ç‰‡è¡Œæ•°ã€‚é»˜è®¤2ï¼Œå¿…é¡»æ˜¯èŒƒå›´ [1, 20] ä¹‹å†…
 	 * @param cols
-	 *            Ä¿±êÇĞÆ¬ÁĞÊı¡£Ä¬ÈÏ2£¬±ØĞëÊÇ·¶Î§ [1, 20] Ö®ÄÚ
+	 *            ç›®æ ‡åˆ‡ç‰‡åˆ—æ•°ã€‚é»˜è®¤2ï¼Œå¿…é¡»æ˜¯èŒƒå›´ [1, 20] ä¹‹å†…
 	 */
 	public final static void cut2(String srcImageFile, String descDir,
 			int rows, int cols) {
 		try {
 			if (rows <= 0 || rows > 20)
-				rows = 2; // ÇĞÆ¬ĞĞÊı
+				rows = 2; // åˆ‡ç‰‡è¡Œæ•°
 			if (cols <= 0 || cols > 20)
-				cols = 2; // ÇĞÆ¬ÁĞÊı
-			// ¶ÁÈ¡Ô´Í¼Ïñ
+				cols = 2; // åˆ‡ç‰‡åˆ—æ•°
+			// è¯»å–æºå›¾åƒ
 			BufferedImage bi = ImageIO.read(new File(srcImageFile));
-			int srcWidth = bi.getHeight(); // Ô´Í¼¿í¶È
-			int srcHeight = bi.getWidth(); // Ô´Í¼¸ß¶È
+			int srcWidth = bi.getHeight(); // æºå›¾å®½åº¦
+			int srcHeight = bi.getWidth(); // æºå›¾é«˜åº¦
 			if (srcWidth > 0 && srcHeight > 0) {
 				Image img;
 				ImageFilter cropFilter;
 				Image image = bi.getScaledInstance(srcWidth, srcHeight,
 						Image.SCALE_DEFAULT);
-				int destWidth = srcWidth; // Ã¿ÕÅÇĞÆ¬µÄ¿í¶È
-				int destHeight = srcHeight; // Ã¿ÕÅÇĞÆ¬µÄ¸ß¶È
-				// ¼ÆËãÇĞÆ¬µÄ¿í¶ÈºÍ¸ß¶È
+				int destWidth = srcWidth; // æ¯å¼ åˆ‡ç‰‡çš„å®½åº¦
+				int destHeight = srcHeight; // æ¯å¼ åˆ‡ç‰‡çš„é«˜åº¦
+				// è®¡ç®—åˆ‡ç‰‡çš„å®½åº¦å’Œé«˜åº¦
 				if (srcWidth % cols == 0) {
 					destWidth = srcWidth / cols;
 				} else {
@@ -257,12 +257,12 @@ public class ImageUtils {
 				} else {
 					destHeight = (int) Math.floor(srcWidth / rows) + 1;
 				}
-				// Ñ­»·½¨Á¢ÇĞÆ¬
-				// ¸Ä½øµÄÏë·¨:ÊÇ·ñ¿ÉÓÃ¶àÏß³Ì¼Ó¿ìÇĞ¸îËÙ¶È
+				// å¾ªç¯å»ºç«‹åˆ‡ç‰‡
+				// æ”¹è¿›çš„æƒ³æ³•:æ˜¯å¦å¯ç”¨å¤šçº¿ç¨‹åŠ å¿«åˆ‡å‰²é€Ÿåº¦
 				for (int i = 0; i < rows; i++) {
 					for (int j = 0; j < cols; j++) {
-						// ËÄ¸ö²ÎÊı·Ö±ğÎªÍ¼ÏñÆğµã×ø±êºÍ¿í¸ß
-						// ¼´: CropImageFilter(int x,int y,int width,int height)
+						// å››ä¸ªå‚æ•°åˆ†åˆ«ä¸ºå›¾åƒèµ·ç‚¹åæ ‡å’Œå®½é«˜
+						// å³: CropImageFilter(int x,int y,int width,int height)
 						cropFilter = new CropImageFilter(j * destWidth, i
 								* destHeight, destWidth, destHeight);
 						img = Toolkit.getDefaultToolkit().createImage(
@@ -271,9 +271,9 @@ public class ImageUtils {
 						BufferedImage tag = new BufferedImage(destWidth,
 								destHeight, BufferedImage.TYPE_INT_RGB);
 						Graphics g = tag.getGraphics();
-						g.drawImage(img, 0, 0, null); // »æÖÆËõĞ¡ºóµÄÍ¼
+						g.drawImage(img, 0, 0, null); // ç»˜åˆ¶ç¼©å°åçš„å›¾
 						g.dispose();
-						// Êä³öÎªÎÄ¼ş
+						// è¾“å‡ºä¸ºæ–‡ä»¶
 						ImageIO.write(tag, "JPEG", new File(descDir + "_r" + i
 								+ "_c" + j + ".jpg"));
 					}
@@ -285,36 +285,36 @@ public class ImageUtils {
 	}
 
 	/**
-	 * Í¼ÏñÇĞ¸î£¨Ö¸¶¨ÇĞÆ¬µÄ¿í¶ÈºÍ¸ß¶È£©
+	 * å›¾åƒåˆ‡å‰²ï¼ˆæŒ‡å®šåˆ‡ç‰‡çš„å®½åº¦å’Œé«˜åº¦ï¼‰
 	 * 
 	 * @param srcImageFile
-	 *            Ô´Í¼ÏñµØÖ·
+	 *            æºå›¾åƒåœ°å€
 	 * @param descDir
-	 *            ÇĞÆ¬Ä¿±êÎÄ¼ş¼Ğ
+	 *            åˆ‡ç‰‡ç›®æ ‡æ–‡ä»¶å¤¹
 	 * @param destWidth
-	 *            Ä¿±êÇĞÆ¬¿í¶È¡£Ä¬ÈÏ200
+	 *            ç›®æ ‡åˆ‡ç‰‡å®½åº¦ã€‚é»˜è®¤200
 	 * @param destHeight
-	 *            Ä¿±êÇĞÆ¬¸ß¶È¡£Ä¬ÈÏ150
+	 *            ç›®æ ‡åˆ‡ç‰‡é«˜åº¦ã€‚é»˜è®¤150
 	 */
 	public final static void cut3(String srcImageFile, String descDir,
 			int destWidth, int destHeight) {
 		try {
 			if (destWidth <= 0)
-				destWidth = 200; // ÇĞÆ¬¿í¶È
+				destWidth = 200; // åˆ‡ç‰‡å®½åº¦
 			if (destHeight <= 0)
-				destHeight = 150; // ÇĞÆ¬¸ß¶È
-			// ¶ÁÈ¡Ô´Í¼Ïñ
+				destHeight = 150; // åˆ‡ç‰‡é«˜åº¦
+			// è¯»å–æºå›¾åƒ
 			BufferedImage bi = ImageIO.read(new File(srcImageFile));
-			int srcWidth = bi.getHeight(); // Ô´Í¼¿í¶È
-			int srcHeight = bi.getWidth(); // Ô´Í¼¸ß¶È
+			int srcWidth = bi.getHeight(); // æºå›¾å®½åº¦
+			int srcHeight = bi.getWidth(); // æºå›¾é«˜åº¦
 			if (srcWidth > destWidth && srcHeight > destHeight) {
 				Image img;
 				ImageFilter cropFilter;
 				Image image = bi.getScaledInstance(srcWidth, srcHeight,
 						Image.SCALE_DEFAULT);
-				int cols = 0; // ÇĞÆ¬ºáÏòÊıÁ¿
-				int rows = 0; // ÇĞÆ¬×İÏòÊıÁ¿
-				// ¼ÆËãÇĞÆ¬µÄºáÏòºÍ×İÏòÊıÁ¿
+				int cols = 0; // åˆ‡ç‰‡æ¨ªå‘æ•°é‡
+				int rows = 0; // åˆ‡ç‰‡çºµå‘æ•°é‡
+				// è®¡ç®—åˆ‡ç‰‡çš„æ¨ªå‘å’Œçºµå‘æ•°é‡
 				if (srcWidth % destWidth == 0) {
 					cols = srcWidth / destWidth;
 				} else {
@@ -325,12 +325,12 @@ public class ImageUtils {
 				} else {
 					rows = (int) Math.floor(srcHeight / destHeight) + 1;
 				}
-				// Ñ­»·½¨Á¢ÇĞÆ¬
-				// ¸Ä½øµÄÏë·¨:ÊÇ·ñ¿ÉÓÃ¶àÏß³Ì¼Ó¿ìÇĞ¸îËÙ¶È
+				// å¾ªç¯å»ºç«‹åˆ‡ç‰‡
+				// æ”¹è¿›çš„æƒ³æ³•:æ˜¯å¦å¯ç”¨å¤šçº¿ç¨‹åŠ å¿«åˆ‡å‰²é€Ÿåº¦
 				for (int i = 0; i < rows; i++) {
 					for (int j = 0; j < cols; j++) {
-						// ËÄ¸ö²ÎÊı·Ö±ğÎªÍ¼ÏñÆğµã×ø±êºÍ¿í¸ß
-						// ¼´: CropImageFilter(int x,int y,int width,int height)
+						// å››ä¸ªå‚æ•°åˆ†åˆ«ä¸ºå›¾åƒèµ·ç‚¹åæ ‡å’Œå®½é«˜
+						// å³: CropImageFilter(int x,int y,int width,int height)
 						cropFilter = new CropImageFilter(j * destWidth, i
 								* destHeight, destWidth, destHeight);
 						img = Toolkit.getDefaultToolkit().createImage(
@@ -339,9 +339,9 @@ public class ImageUtils {
 						BufferedImage tag = new BufferedImage(destWidth,
 								destHeight, BufferedImage.TYPE_INT_RGB);
 						Graphics g = tag.getGraphics();
-						g.drawImage(img, 0, 0, null); // »æÖÆËõĞ¡ºóµÄÍ¼
+						g.drawImage(img, 0, 0, null); // ç»˜åˆ¶ç¼©å°åçš„å›¾
 						g.dispose();
-						// Êä³öÎªÎÄ¼ş
+						// è¾“å‡ºä¸ºæ–‡ä»¶
 						ImageIO.write(tag, "JPEG", new File(descDir + "_r" + i
 								+ "_c" + j + ".jpg"));
 					}
@@ -353,14 +353,14 @@ public class ImageUtils {
 	}
 
 	/**
-	 * Í¼ÏñÀàĞÍ×ª»»£ºGIF->JPG¡¢GIF->PNG¡¢PNG->JPG¡¢PNG->GIF(X)¡¢BMP->PNG
+	 * å›¾åƒç±»å‹è½¬æ¢ï¼šGIF->JPGã€GIF->PNGã€PNG->JPGã€PNG->GIF(X)ã€BMP->PNG
 	 * 
 	 * @param srcImageFile
-	 *            Ô´Í¼ÏñµØÖ·
+	 *            æºå›¾åƒåœ°å€
 	 * @param formatName
-	 *            °üº¬¸ñÊ½·ÇÕıÊ½Ãû³ÆµÄ String£ºÈçJPG¡¢JPEG¡¢GIFµÈ
+	 *            åŒ…å«æ ¼å¼éæ­£å¼åç§°çš„ Stringï¼šå¦‚JPGã€JPEGã€GIFç­‰
 	 * @param destImageFile
-	 *            Ä¿±êÍ¼ÏñµØÖ·
+	 *            ç›®æ ‡å›¾åƒåœ°å€
 	 */
 	public final static void convert(String srcImageFile, String formatName,
 			String destImageFile) {
@@ -376,12 +376,12 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ²ÊÉ«×ªÎªºÚ°×
+	 * å½©è‰²è½¬ä¸ºé»‘ç™½
 	 * 
 	 * @param srcImageFile
-	 *            Ô´Í¼ÏñµØÖ·
+	 *            æºå›¾åƒåœ°å€
 	 * @param destImageFile
-	 *            Ä¿±êÍ¼ÏñµØÖ·
+	 *            ç›®æ ‡å›¾åƒåœ°å€
 	 */
 	public final static void gray(String srcImageFile, String destImageFile) {
 		try {
@@ -396,28 +396,28 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ¸øÍ¼Æ¬Ìí¼ÓÎÄ×ÖË®Ó¡
+	 * ç»™å›¾ç‰‡æ·»åŠ æ–‡å­—æ°´å°
 	 * 
 	 * @param pressText
-	 *            Ë®Ó¡ÎÄ×Ö
+	 *            æ°´å°æ–‡å­—
 	 * @param srcImageFile
-	 *            Ô´Í¼ÏñµØÖ·
+	 *            æºå›¾åƒåœ°å€
 	 * @param destImageFile
-	 *            Ä¿±êÍ¼ÏñµØÖ·
+	 *            ç›®æ ‡å›¾åƒåœ°å€
 	 * @param fontName
-	 *            Ë®Ó¡µÄ×ÖÌåÃû³Æ
+	 *            æ°´å°çš„å­—ä½“åç§°
 	 * @param fontStyle
-	 *            Ë®Ó¡µÄ×ÖÌåÑùÊ½
+	 *            æ°´å°çš„å­—ä½“æ ·å¼
 	 * @param color
-	 *            Ë®Ó¡µÄ×ÖÌåÑÕÉ«
+	 *            æ°´å°çš„å­—ä½“é¢œè‰²
 	 * @param fontSize
-	 *            Ë®Ó¡µÄ×ÖÌå´óĞ¡
+	 *            æ°´å°çš„å­—ä½“å¤§å°
 	 * @param x
-	 *            ĞŞÕıÖµ
+	 *            ä¿®æ­£å€¼
 	 * @param y
-	 *            ĞŞÕıÖµ
+	 *            ä¿®æ­£å€¼
 	 * @param alpha
-	 *            Í¸Ã÷¶È£ºalpha ±ØĞëÊÇ·¶Î§ [0.0, 1.0] Ö®ÄÚ£¨°üº¬±ß½çÖµ£©µÄÒ»¸ö¸¡µãÊı×Ö
+	 *            é€æ˜åº¦ï¼šalpha å¿…é¡»æ˜¯èŒƒå›´ [0.0, 1.0] ä¹‹å†…ï¼ˆåŒ…å«è¾¹ç•Œå€¼ï¼‰çš„ä¸€ä¸ªæµ®ç‚¹æ•°å­—
 	 */
 	public final static void pressText(String pressText, String srcImageFile,
 			String destImageFile, String fontName, int fontStyle, Color color,
@@ -435,40 +435,40 @@ public class ImageUtils {
 			g.setFont(new Font(fontName, fontStyle, fontSize));
 			g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_ATOP,
 					alpha));
-			// ÔÚÖ¸¶¨×ø±ê»æÖÆË®Ó¡ÎÄ×Ö
+			// åœ¨æŒ‡å®šåæ ‡ç»˜åˆ¶æ°´å°æ–‡å­—
 			g.drawString(pressText, (width - (getLength(pressText) * fontSize))
 					/ 2 + x, (height - fontSize) / 2 + y);
 			g.dispose();
 			ImageIO.write((BufferedImage) image, "JPEG",
-					new File(destImageFile));// Êä³öµ½ÎÄ¼şÁ÷
+					new File(destImageFile));// è¾“å‡ºåˆ°æ–‡ä»¶æµ
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * ¸øÍ¼Æ¬Ìí¼ÓÎÄ×ÖË®Ó¡
+	 * ç»™å›¾ç‰‡æ·»åŠ æ–‡å­—æ°´å°
 	 * 
 	 * @param pressText
-	 *            Ë®Ó¡ÎÄ×Ö
+	 *            æ°´å°æ–‡å­—
 	 * @param srcImageFile
-	 *            Ô´Í¼ÏñµØÖ·
+	 *            æºå›¾åƒåœ°å€
 	 * @param destImageFile
-	 *            Ä¿±êÍ¼ÏñµØÖ·
+	 *            ç›®æ ‡å›¾åƒåœ°å€
 	 * @param fontName
-	 *            ×ÖÌåÃû³Æ
+	 *            å­—ä½“åç§°
 	 * @param fontStyle
-	 *            ×ÖÌåÑùÊ½
+	 *            å­—ä½“æ ·å¼
 	 * @param color
-	 *            ×ÖÌåÑÕÉ«
+	 *            å­—ä½“é¢œè‰²
 	 * @param fontSize
-	 *            ×ÖÌå´óĞ¡
+	 *            å­—ä½“å¤§å°
 	 * @param x
-	 *            ĞŞÕıÖµ
+	 *            ä¿®æ­£å€¼
 	 * @param y
-	 *            ĞŞÕıÖµ
+	 *            ä¿®æ­£å€¼
 	 * @param alpha
-	 *            Í¸Ã÷¶È£ºalpha ±ØĞëÊÇ·¶Î§ [0.0, 1.0] Ö®ÄÚ£¨°üº¬±ß½çÖµ£©µÄÒ»¸ö¸¡µãÊı×Ö
+	 *            é€æ˜åº¦ï¼šalpha å¿…é¡»æ˜¯èŒƒå›´ [0.0, 1.0] ä¹‹å†…ï¼ˆåŒ…å«è¾¹ç•Œå€¼ï¼‰çš„ä¸€ä¸ªæµ®ç‚¹æ•°å­—
 	 */
 	public final static void pressText2(String pressText, String srcImageFile,
 			String destImageFile, String fontName, int fontStyle, Color color,
@@ -486,7 +486,7 @@ public class ImageUtils {
 			g.setFont(new Font(fontName, fontStyle, fontSize));
 			g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_ATOP,
 					alpha));
-			// ÔÚÖ¸¶¨×ø±ê»æÖÆË®Ó¡ÎÄ×Ö
+			// åœ¨æŒ‡å®šåæ ‡ç»˜åˆ¶æ°´å°æ–‡å­—
 			g.drawString(pressText, (width - (getLength(pressText) * fontSize))
 					/ 2 + x, (height - fontSize) / 2 + y);
 			g.dispose();
@@ -498,20 +498,20 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ¸øÍ¼Æ¬Ìí¼ÓÍ¼Æ¬Ë®Ó¡
+	 * ç»™å›¾ç‰‡æ·»åŠ å›¾ç‰‡æ°´å°
 	 * 
 	 * @param pressImg
-	 *            Ë®Ó¡Í¼Æ¬
+	 *            æ°´å°å›¾ç‰‡
 	 * @param srcImageFile
-	 *            Ô´Í¼ÏñµØÖ·
+	 *            æºå›¾åƒåœ°å€
 	 * @param destImageFile
-	 *            Ä¿±êÍ¼ÏñµØÖ·
+	 *            ç›®æ ‡å›¾åƒåœ°å€
 	 * @param x
-	 *            ĞŞÕıÖµ¡£ Ä¬ÈÏÔÚÖĞ¼ä
+	 *            ä¿®æ­£å€¼ã€‚ é»˜è®¤åœ¨ä¸­é—´
 	 * @param y
-	 *            ĞŞÕıÖµ¡£ Ä¬ÈÏÔÚÖĞ¼ä
+	 *            ä¿®æ­£å€¼ã€‚ é»˜è®¤åœ¨ä¸­é—´
 	 * @param alpha
-	 *            Í¸Ã÷¶È£ºalpha ±ØĞëÊÇ·¶Î§ [0.0, 1.0] Ö®ÄÚ£¨°üº¬±ß½çÖµ£©µÄÒ»¸ö¸¡µãÊı×Ö
+	 *            é€æ˜åº¦ï¼šalpha å¿…é¡»æ˜¯èŒƒå›´ [0.0, 1.0] ä¹‹å†…ï¼ˆåŒ…å«è¾¹ç•Œå€¼ï¼‰çš„ä¸€ä¸ªæµ®ç‚¹æ•°å­—
 	 */
 	public final static void pressImage(String pressImg, String srcImageFile,
 			String destImageFile, int x, int y, float alpha) {
@@ -524,7 +524,7 @@ public class ImageUtils {
 					BufferedImage.TYPE_INT_RGB);
 			Graphics2D g = image.createGraphics();
 			g.drawImage(src, 0, 0, wideth, height, null);
-			// Ë®Ó¡ÎÄ¼ş
+			// æ°´å°æ–‡ä»¶
 			Image src_biao = ImageIO.read(new File(pressImg));
 			int wideth_biao = src_biao.getWidth(null);
 			int height_biao = src_biao.getHeight(null);
@@ -532,7 +532,7 @@ public class ImageUtils {
 					alpha));
 			g.drawImage(src_biao, (wideth - wideth_biao) / 2,
 					(height - height_biao) / 2, wideth_biao, height_biao, null);
-			// Ë®Ó¡ÎÄ¼ş½áÊø
+			// æ°´å°æ–‡ä»¶ç»“æŸ
 			g.dispose();
 			ImageIO.write((BufferedImage) image, "JPEG",
 					new File(destImageFile));
@@ -542,7 +542,7 @@ public class ImageUtils {
 	}
 
 	/**
-	 * ¼ÆËãtextµÄ³¤¶È£¨Ò»¸öÖĞÎÄËãÁ½¸ö×Ö·û£©
+	 * è®¡ç®—textçš„é•¿åº¦ï¼ˆä¸€ä¸ªä¸­æ–‡ç®—ä¸¤ä¸ªå­—ç¬¦ï¼‰
 	 * 
 	 * @param text
 	 * @return

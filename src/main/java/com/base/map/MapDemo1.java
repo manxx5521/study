@@ -6,23 +6,23 @@ public class MapDemo1 {
 	public static void main(String[] args) 
 	{
 		Map<String,String> map=new HashMap<String,String>();
-		//Ìí¼ÓÔªËØ
+		//æ·»åŠ å…ƒç´ 
 		map.put("01","zhangsan1");
 		map.put("02","zhangsan2");
-		//Ìí¼ÓµÄ¼üÖØ¸´Ê±£¬¼ü¶ÔÓ¦µÄĞÂÖµ¸²¸Ç¾ÉÖµ£¬put·½·¨·µ»Ø¾ÉÖµ
+		//æ·»åŠ çš„é”®é‡å¤æ—¶ï¼Œé”®å¯¹åº”çš„æ–°å€¼è¦†ç›–æ—§å€¼ï¼Œputæ–¹æ³•è¿”å›æ—§å€¼
 		System.out.println("put"+map.put("03","zhangsan3"));
 		System.out.println("put"+map.put("03","wangwu"));
-		//ÅĞ¶ÏÊÇ·ñº¬ÓĞ05¼ü
+		//åˆ¤æ–­æ˜¯å¦å«æœ‰05é”®
 		System.out.println("containsKey:"+map.containsKey("05"));
-		/*Ò²¿ÉÍ¨¹ıget·½·¨µÄ·µ»ØÖµÀ´ÅĞ¶ÏÒ»¸ö¼üÊÇ·ñ´æÔÚ
-		´æÔÚ»á»ñÈ¡¾ßÌåÖµ£¬²»´æÔÚ¾Í·µ»Ønull¡£
-		HashMapÖ§³Önull,Hashtable²»Ö§³Önull¡£
+		/*ä¹Ÿå¯é€šè¿‡getæ–¹æ³•çš„è¿”å›å€¼æ¥åˆ¤æ–­ä¸€ä¸ªé”®æ˜¯å¦å­˜åœ¨
+		å­˜åœ¨ä¼šè·å–å…·ä½“å€¼ï¼Œä¸å­˜åœ¨å°±è¿”å›nullã€‚
+		HashMapæ”¯æŒnull,Hashtableä¸æ”¯æŒnullã€‚
 		*/
 		map.put("04",null);
 		System.out.println("get:"+map.get("023"));
-		//É¾³ı02¼ü²¢·µ»ØÆä¶ÔÓ¦µÄÖµ
+		//åˆ é™¤02é”®å¹¶è¿”å›å…¶å¯¹åº”çš„å€¼
 		System.out.println("remove:"+map.remove("02"));
-		//»ñÈ¡map¼¯ºÏÖĞËùÓĞµÄÖµ¡£
+		//è·å–mapé›†åˆä¸­æ‰€æœ‰çš„å€¼ã€‚
 		Collection<String> coll=map.values();
 		System.out.println(coll);
 		System.out.println(map);

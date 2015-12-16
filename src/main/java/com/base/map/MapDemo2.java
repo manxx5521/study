@@ -6,19 +6,19 @@ public class MapDemo2 {
 	public static void main(String[] args) 
 	{
 		Map<String,String> map=new HashMap<String,String>();
-		//Ìí¼ÓÔªËØ
+		//æ·»åŠ å…ƒç´ 
 		map.put("04","zhangsan4");
 		map.put("02","zhangsan2");
 		map.put("01","zhangsan1");
 		map.put("03","zhangsan3");
-		//keySet()»ñÈ¡map¼¯ºÏµÄËùÓĞ¼ü£¬´æÈëSet¼¯ºÏ
+		//keySet()è·å–mapé›†åˆçš„æ‰€æœ‰é”®ï¼Œå­˜å…¥Seté›†åˆ
 		Set<String> keySet=map.keySet();
-		//ÓĞÁËSet¼¯ºÏ,¾Í¿É»ñÈ¡µü´úÆ÷
+		//æœ‰äº†Seté›†åˆ,å°±å¯è·å–è¿­ä»£å™¨
 		Iterator<String> it=keySet.iterator();
 		while(it.hasNext())
 		{
 			String key=it.next();
-			//map¼¯ºÏµÄget·½·¨»ñÈ¡¼ü¶ÔÓ¦µÄÖµ
+			//mapé›†åˆçš„getæ–¹æ³•è·å–é”®å¯¹åº”çš„å€¼
 			String value=map.get(key);
 			System.out.println("key:"+key+",value:"+value);
 		}

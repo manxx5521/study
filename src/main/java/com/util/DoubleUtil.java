@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 public class DoubleUtil {
 	/**
-	 * ½«double×ª»»³É°Ù·ÖĞÎÊ½
+	 * å°†doubleè½¬æ¢æˆç™¾åˆ†å½¢å¼
 	 * */
 	public String doubleForB(Double num){
 		DecimalFormat df=new DecimalFormat("###,##0.00");

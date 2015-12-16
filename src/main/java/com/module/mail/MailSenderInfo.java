@@ -1,54 +1,54 @@
 package com.module.mail;
 
 /** 
- * ·¢ËÍÓÊ¼şĞèÒªÊ¹ÓÃµÄ»ù±¾ĞÅÏ¢ 
+ * å‘é€é‚®ä»¶éœ€è¦ä½¿ç”¨çš„åŸºæœ¬ä¿¡æ¯ 
  */
 import java.util.Properties;
 
 public class MailSenderInfo {
 	/**
-	 * ·¢ËÍÓÊ¼şµÄ·şÎñÆ÷µÄIPºÍ¶Ë¿Ú 
+	 * å‘é€é‚®ä»¶çš„æœåŠ¡å™¨çš„IPå’Œç«¯å£ 
 	 * */
 	private String mailServerHost;
 	/**
-	 * Ä¬ÈÏ·şÎñ½Ó¿Ú
+	 * é»˜è®¤æœåŠ¡æ¥å£
 	 */
 	private String mailServerPort = "25";
 	/** 
-	 * ÓÊ¼ş·¢ËÍÕßµÄµØÖ·
+	 * é‚®ä»¶å‘é€è€…çš„åœ°å€
 	 *  */
 	private String fromAddress;
 	/** 
-	 * ÓÊ¼ş½ÓÊÕÕßµÄµØÖ· 
+	 * é‚®ä»¶æ¥æ”¶è€…çš„åœ°å€ 
 	 * */
 	private String toAddress;
 	/** 
-	 * µÇÂ½ÓÊ¼ş·¢ËÍ·şÎñÆ÷µÄÓÃ»§Ãû
+	 * ç™»é™†é‚®ä»¶å‘é€æœåŠ¡å™¨çš„ç”¨æˆ·å
 	 * */
 	private String userName;
 	/** 
-	 * µÇÂ½ÓÊ¼ş·¢ËÍ·şÎñÆ÷µÄÃÜÂë 
+	 * ç™»é™†é‚®ä»¶å‘é€æœåŠ¡å™¨çš„å¯†ç  
 	 * */
 	private String password;
 	/** 
-	 * ÊÇ·ñĞèÒªÉí·İÑéÖ¤
+	 * æ˜¯å¦éœ€è¦èº«ä»½éªŒè¯
 	 *  */
 	private boolean validate = false;
 	/** 
-	 * ÓÊ¼şÖ÷Ìâ 
+	 * é‚®ä»¶ä¸»é¢˜ 
 	 * */
 	private String subject;
 	/** 
-	 * ÓÊ¼şµÄÎÄ±¾ÄÚÈİ 
+	 * é‚®ä»¶çš„æ–‡æœ¬å†…å®¹ 
 	 * */
 	private String content;
 	/** 
-	 * ÓÊ¼ş¸½¼şµÄÎÄ¼şÃû 
+	 * é‚®ä»¶é™„ä»¶çš„æ–‡ä»¶å 
 	 * */
 	private String[] attachFileNames;
 
 	/**
-	 * »ñµÃÓÊ¼ş»á»°ÊôĞÔ
+	 * è·å¾—é‚®ä»¶ä¼šè¯å±æ€§
 	 */
 	public Properties getProperties() {
 		Properties p = new Properties();
@@ -59,14 +59,14 @@ public class MailSenderInfo {
 	}
 	
 	/**
-	 * ÓÃÀ´»ñµÃhostÂ·¾¶
+	 * ç”¨æ¥è·å¾—hostè·¯å¾„
 	 */
 	public String getMailServerHost() {
 		return mailServerHost;
 	}
 	/**
-	 * ÓÃÀ´ÉèÖÃhostÂ·¾¶<br/>
-	 * ±ÈÈç163ÓÊÏäÉèÖÃÎª£ºsmtp.163.com
+	 * ç”¨æ¥è®¾ç½®hostè·¯å¾„<br/>
+	 * æ¯”å¦‚163é‚®ç®±è®¾ç½®ä¸ºï¼šsmtp.163.com
 	 */
 	public void setMailServerHost(String mailServerHost) {
 		this.mailServerHost = mailServerHost;
@@ -76,8 +76,8 @@ public class MailSenderInfo {
 		return mailServerPort;
 	}
 	/**
-	 * ÉèÖÃ¶Ë¿Ú<br/>
-	 * Ä¬ÈÏ¶Ë¿Ú25
+	 * è®¾ç½®ç«¯å£<br/>
+	 * é»˜è®¤ç«¯å£25
 	 */
 	public void setMailServerPort(String mailServerPort) {
 		this.mailServerPort = mailServerPort;
@@ -88,8 +88,8 @@ public class MailSenderInfo {
 	}
 	
 	/**
-	 * ÊÇ·ñĞèÒªÑéÖ¤
-	 * @param validate Ä¬ÈÏfalse,²»ÑéÖ¤
+	 * æ˜¯å¦éœ€è¦éªŒè¯
+	 * @param validate é»˜è®¤false,ä¸éªŒè¯
 	 */
 	public void setValidate(boolean validate) {
 		this.validate = validate;
@@ -107,7 +107,7 @@ public class MailSenderInfo {
 		return fromAddress;
 	}
 	/**
-	 * ÉèÖÃÓÊ¼ş·¢ËÍÕßµØÖ·
+	 * è®¾ç½®é‚®ä»¶å‘é€è€…åœ°å€
 	 */
 	public void setFromAddress(String fromAddress) {
 		this.fromAddress = fromAddress;
@@ -122,7 +122,7 @@ public class MailSenderInfo {
 	}
 	
 	/**
-	 * ÉèÖÃÓÊ¼ş½ÓÊÕÈËµØÖ·
+	 * è®¾ç½®é‚®ä»¶æ¥æ”¶äººåœ°å€
 	 * @return
 	 */
 	public String getToAddress() {
@@ -146,7 +146,7 @@ public class MailSenderInfo {
 	}
 	
 	/**
-	 * ÉèÖÃÓÊ¼şÖ÷Ìâ
+	 * è®¾ç½®é‚®ä»¶ä¸»é¢˜
 	 */
 	public void setSubject(String subject) {
 		this.subject = subject;
@@ -156,7 +156,7 @@ public class MailSenderInfo {
 		return content;
 	}
 	/**
-	 * ÉèÖÃÓÒ¼üÄÚÈİ
+	 * è®¾ç½®å³é”®å†…å®¹
 	 * @param textContent
 	 */
 	public void setContent(String textContent) {

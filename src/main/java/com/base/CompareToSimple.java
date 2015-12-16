@@ -5,13 +5,13 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Í¨¹ıComparableÊµÏÖcompareTo·½·¨¶ÔÀàÅÅĞò<br>
- * compareTo ·µ»Ø
- * ´óÓÚ0µÄÊı£¨1£©£¬ËµÃ÷µ±Ç°ÀàÔÚ±È½ÏÀàµÄºó±ß
- * Ğ¡ÓÚ0µÄÊı£¨-1£©£¬ËµÃ÷µ±Ç°ÀàÔÚ±È½ÏÀàµÄÇ°±ß
- * £¨´óÓÚ»òĞ¡ÓÚ¶àÉÙÃ»ÓĞ±¾ÖÊÇø±ğ£¬·µ»Ø1ºÍ·µ»Ø100Ò»Ñù£©
+ * é€šè¿‡Comparableå®ç°compareToæ–¹æ³•å¯¹ç±»æ’åº<br>
+ * compareTo è¿”å›
+ * å¤§äº0çš„æ•°ï¼ˆ1ï¼‰ï¼Œè¯´æ˜å½“å‰ç±»åœ¨æ¯”è¾ƒç±»çš„åè¾¹
+ * å°äº0çš„æ•°ï¼ˆ-1ï¼‰ï¼Œè¯´æ˜å½“å‰ç±»åœ¨æ¯”è¾ƒç±»çš„å‰è¾¹
+ * ï¼ˆå¤§äºæˆ–å°äºå¤šå°‘æ²¡æœ‰æœ¬è´¨åŒºåˆ«ï¼Œè¿”å›1å’Œè¿”å›100ä¸€æ ·ï¼‰
  */
-//ÒªÅÅĞòµÄÀàÊµÏÖComparable½Ó¿Ú£¬È»ºóÖØĞ´compareTo()·½·¨
+//è¦æ’åºçš„ç±»å®ç°Comparableæ¥å£ï¼Œç„¶åé‡å†™compareTo()æ–¹æ³•
 public class CompareToSimple implements Comparable<CompareToSimple>{
 	private String name;
     private int age;
@@ -36,26 +36,26 @@ public class CompareToSimple implements Comparable<CompareToSimple>{
     }
     
     /**
-     * ÅÅĞò·½·¨
+     * æ’åºæ–¹æ³•
      */
     @Override
     public int compareTo(CompareToSimple o) {
-        // ÏÈ°´ageÅÅĞò
+        // å…ˆæŒ‰ageæ’åº
     	
-    	//Èç¹ûµ±Ç°ÀàµÄage´óÓÚ±È½ÏµÄage   12>5
+    	//å¦‚æœå½“å‰ç±»çš„ageå¤§äºæ¯”è¾ƒçš„age   12>5
         if (this.age > o.getAge()) {
-        	//·µ»Ø15-5=10£¬·µ»ØÒ»¸ö´óÓÚ0µÄÊı¡£ËµÃ÷Õâ¸öÀàµÄ×ÖµäË³ĞòÔÚ´«ÈëµÄºó±ß
+        	//è¿”å›15-5=10ï¼Œè¿”å›ä¸€ä¸ªå¤§äº0çš„æ•°ã€‚è¯´æ˜è¿™ä¸ªç±»çš„å­—å…¸é¡ºåºåœ¨ä¼ å…¥çš„åè¾¹
             return (this.age - o.getAge());
         }
-        //Èç¹ûµ±Ç°ÀàµÄageĞ¡ÓÚ±È½ÏµÄage 6<11
+        //å¦‚æœå½“å‰ç±»çš„ageå°äºæ¯”è¾ƒçš„age 6<11
         if (this.age < o.getAge()) {
-        	//·µ»Ø6-11=-5£¬·µ»ØÒ»¸öĞ¡ÓÚ0µÄÊı¡£ËµÃ÷Õâ¸öÀàµÄ×ÖµäË³ĞòÔÚ´«ÈëµÄÇ°±ß
+        	//è¿”å›6-11=-5ï¼Œè¿”å›ä¸€ä¸ªå°äº0çš„æ•°ã€‚è¯´æ˜è¿™ä¸ªç±»çš„å­—å…¸é¡ºåºåœ¨ä¼ å…¥çš„å‰è¾¹
             return (this.age - o.getAge());
         }
         
-        // Èç¹ûÁ½¸öÀàµÄÄêÁäÒ»Ñù£¬°´nameÅÅĞò
-        /*this.name.compareTo(o.getName())Õâ¸öÒÑ¾­ÊµÏÖÁË×Ö·û´®µÄ×ÖµäÅÅĞò
-        	ÆäÊµÖ±½ÓÊä³ö´óĞ¡¾Í¿ÉÒÔ¡£Êä³ö1ºÍ-1Ò²¿ÉÒÔ */
+        // å¦‚æœä¸¤ä¸ªç±»çš„å¹´é¾„ä¸€æ ·ï¼ŒæŒ‰nameæ’åº
+        /*this.name.compareTo(o.getName())è¿™ä¸ªå·²ç»å®ç°äº†å­—ç¬¦ä¸²çš„å­—å…¸æ’åº
+        	å…¶å®ç›´æ¥è¾“å‡ºå¤§å°å°±å¯ä»¥ã€‚è¾“å‡º1å’Œ-1ä¹Ÿå¯ä»¥ */
         if (this.name.compareTo(o.getName()) > 0) {
             return 1;
         }
@@ -63,7 +63,7 @@ public class CompareToSimple implements Comparable<CompareToSimple>{
             return -1;
         }
         
-        //ËµÃ÷ÊôĞÔÒ»Ñù
+        //è¯´æ˜å±æ€§ä¸€æ ·
         return 0;
     }
     
@@ -80,7 +80,7 @@ public class CompareToSimple implements Comparable<CompareToSimple>{
         list.add(f4);
         list.add(f2);
         
-        //ÊµÏÖÁĞ±íµÄ×ÖµäÅÅĞò
+        //å®ç°åˆ—è¡¨çš„å­—å…¸æ’åº
         Collections.sort(list);
 
         for (CompareToSimple o : list) {

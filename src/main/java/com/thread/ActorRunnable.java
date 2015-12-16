@@ -1,29 +1,29 @@
 package com.thread;
 
 /**
- * ÑİÔ±Àà<br/>
- * Í¨¹ıÊµÏÖRunnable½Ó¿ÚÀ´µÃµ½½ø³Ì
+ * æ¼”å‘˜ç±»<br/>
+ * é€šè¿‡å®ç°Runnableæ¥å£æ¥å¾—åˆ°è¿›ç¨‹
  */
 public class ActorRunnable implements Runnable {
 
 	@Override
 	public void run() {
-		// getName»ñµÃµÄÊÇThreadµÄ¾²Ì¬·½·¨»ñµÃµ±Ç°Ïß³Ì£¬ÔÙ»ñµÃÃû×Ö
-		System.out.println(Thread.currentThread().getName() + "ÊÇÒ»¸öÑİÔ±");
+		// getNameè·å¾—çš„æ˜¯Threadçš„é™æ€æ–¹æ³•è·å¾—å½“å‰çº¿ç¨‹ï¼Œå†è·å¾—åå­—
+		System.out.println(Thread.currentThread().getName() + "æ˜¯ä¸€ä¸ªæ¼”å‘˜");
 
-		// ÓÃÀ´¼ÇÂ¼Ñİ³ö´ÎÊı
+		// ç”¨æ¥è®°å½•æ¼”å‡ºæ¬¡æ•°
 		int count = 0;
 		boolean keepRunning = true;
 		while (keepRunning) {
-			System.out.println(Thread.currentThread().getName() + "µÇÌ¨Ñİ³ö£º" + (++count));
+			System.out.println(Thread.currentThread().getName() + "ç™»å°æ¼”å‡ºï¼š" + (++count));
 			if (count == 100) {
 				keepRunning = false;
 			}
 
-			// Ã»µ±ÊÇ10µÄ±¶Êı
+			// æ²¡å½“æ˜¯10çš„å€æ•°
 			if (count % 10 == 0) {
 				try {
-					// Ë¯Ãß1Ãë
+					// ç¡çœ 1ç§’
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -31,7 +31,7 @@ public class ActorRunnable implements Runnable {
 			}
 		}
 
-		System.out.println(Thread.currentThread().getName() + "µÄÑİ³ö½áÊø");
+		System.out.println(Thread.currentThread().getName() + "çš„æ¼”å‡ºç»“æŸ");
 
 	}
 

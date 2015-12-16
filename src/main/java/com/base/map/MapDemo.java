@@ -6,34 +6,34 @@ public class MapDemo {
 	public static void main(String[] args) 
 	{
 		HashMap<Student,String> h=new HashMap<Student,String>();
-		//Ìí¼ÓÔªËØ¡£Ñ§ÉúÊÇ¼ü£¬¹éÊôµØÎªÖµ
+		//æ·»åŠ å…ƒç´ ã€‚å­¦ç”Ÿæ˜¯é”®ï¼Œå½’å±åœ°ä¸ºå€¼
 		h.put(new Student("zhangsan1",21),"beijing");
 		h.put(new Student("zhangsan2",30),"hefei");
 		h.put(new Student("zhangsan2",30),"nanjing");
 		h.put(new Student("zhangsan3",27),"guangzhou");
 		h.put(new Student("zhangsan4",25),"qingdao");
-		//µÚÒ»ÖÖÈ¡³ö·½Ê½ keySet
-		//keySet()»ñÈ¡map¼¯ºÏµÄËùÓĞ¼ü£¬´æÈëSet¼¯ºÏ
+		//ç¬¬ä¸€ç§å–å‡ºæ–¹å¼ keySet
+		//keySet()è·å–mapé›†åˆçš„æ‰€æœ‰é”®ï¼Œå­˜å…¥Seté›†åˆ
 		Set<Student> keySet=h.keySet();
-		//ÓĞÁËSet¼¯ºÏ,¾Í¿É»ñÈ¡µü´úÆ÷
+		//æœ‰äº†Seté›†åˆ,å°±å¯è·å–è¿­ä»£å™¨
 		Iterator<Student> it=keySet.iterator();
 		while(it.hasNext())
 		{
 			Student stu=it.next();
-			//map¼¯ºÏµÄget·½·¨»ñÈ¡¼ü¶ÔÓ¦µÄÖµ
+			//mapé›†åˆçš„getæ–¹æ³•è·å–é”®å¯¹åº”çš„å€¼
 			String adrs=h.get(stu);
 			System.out.println(stu+":"+adrs);
 		}
-		//µÚ¶şÖÖÈ¡³ö·½Ê½ entrySet
-		//È¡³öÓ³Éä¹ØÏµ£¬´æÈëSet¼¯ºÏ
+		//ç¬¬äºŒç§å–å‡ºæ–¹å¼ entrySet
+		//å–å‡ºæ˜ å°„å…³ç³»ï¼Œå­˜å…¥Seté›†åˆ
 		Set<Map.Entry<Student,String>> entrySet=h.entrySet();
-		//µü´úÆ÷»ñÈ¡Ó³Éä¹ØÏµ
+		//è¿­ä»£å™¨è·å–æ˜ å°„å…³ç³»
 		Iterator<Map.Entry<Student,String>> it1=entrySet.iterator();
 		while (it1.hasNext())
 		{
-			//Map.EntryÖĞ´æµÄÊÇÓ³Éä¹ØÏµ
+			//Map.Entryä¸­å­˜çš„æ˜¯æ˜ å°„å…³ç³»
 			Map.Entry<Student,String> me=it1.next();
-			//»ñÈ¡¼üºÍÖµ
+			//è·å–é”®å’Œå€¼
 			Student stu = me.getKey();
 			String adrs = me.getValue();
 			System.out.println(stu+"....."+adrs);

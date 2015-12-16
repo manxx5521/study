@@ -1,7 +1,7 @@
 package com.base.factory;
 
 /**
- * °üÃèÊö-¹¤³§Ä£Ê½°ü
+ * åŒ…æè¿°-å·¥å‚æ¨¡å¼åŒ…
  */
 public class Describe {
 

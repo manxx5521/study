@@ -7,7 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Ë®¹ûÑÕÉ«×¢½â
+ * æ°´æžœé¢œè‰²æ³¨è§£
  * @author peida
  *
  */
@@ -16,14 +16,14 @@ import java.lang.annotation.Target;
 @Documented
 public @interface FruitColor {
     /**
-     * ÑÕÉ«Ã¶¾Ù
+     * é¢œè‰²æžšä¸¾
      * @author peida
      *
      */
     public enum Color{ BULE,RED,GREEN};
     
     /**
-     * ÑÕÉ«ÊôÐÔ
+     * é¢œè‰²å±žæ€§
      * @return
      */
     Color fruitColor() default Color.GREEN;

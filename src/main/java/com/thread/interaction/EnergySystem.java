@@ -1,20 +1,20 @@
 package com.thread.interaction;
 
 /**
- * ÓîÖæµÄÄÜÁ¿ÏµÍ³
- * ×ñÑ­ÄÜÁ¿ÊØºã¶¨ÂÉ£º
- * ÄÜÁ¿²»»áÆ¾¿Õ´´Éú»òÏûÊ§£¬Ö»»á´ÓÒ»´¦×ªÒÆµ½ÁíÒ»´¦
+ * å®‡å®™çš„èƒ½é‡ç³»ç»Ÿ
+ * éµå¾ªèƒ½é‡å®ˆæ’å®šå¾‹ï¼š
+ * èƒ½é‡ä¸ä¼šå‡­ç©ºåˆ›ç”Ÿæˆ–æ¶ˆå¤±ï¼Œåªä¼šä»ä¸€å¤„è½¬ç§»åˆ°å¦ä¸€å¤„
  */
 public class EnergySystem {
 	
-	//ÄÜÁ¿ºĞ×Ó£¬ÄÜÁ¿´æÖüµÄµØ·½
+	//èƒ½é‡ç›’å­ï¼Œèƒ½é‡å­˜è´®çš„åœ°æ–¹
 	 private final double[] energyBoxes;
 	 private final Object lockObj = new Object();
 	 
 	 /**
 	  * 
-	  * @param n    ÄÜÁ¿ºĞ×ÓµÄÊıÁ¿
-	  * @param initialEnergy Ã¿¸öÄÜÁ¿ºĞ×Ó³õÊ¼º¬ÓĞµÄÄÜÁ¿Öµ
+	  * @param n    èƒ½é‡ç›’å­çš„æ•°é‡
+	  * @param initialEnergy æ¯ä¸ªèƒ½é‡ç›’å­åˆå§‹å«æœ‰çš„èƒ½é‡å€¼
 	  */
 	 public EnergySystem(int n, double initialEnergy){
 		 energyBoxes = new double[n];
@@ -23,10 +23,10 @@ public class EnergySystem {
 	 }
 	 
 	 /**
-	  * ÄÜÁ¿µÄ×ªÒÆ£¬´ÓÒ»¸öºĞ×Óµ½ÁíÒ»¸öºĞ×Ó
-	  * @param from ÄÜÁ¿Ô´
-	  * @param to     ÄÜÁ¿ÖÕµã 
-	  * @param amount ÄÜÁ¿Öµ
+	  * èƒ½é‡çš„è½¬ç§»ï¼Œä»ä¸€ä¸ªç›’å­åˆ°å¦ä¸€ä¸ªç›’å­
+	  * @param from èƒ½é‡æº
+	  * @param to     èƒ½é‡ç»ˆç‚¹ 
+	  * @param amount èƒ½é‡å€¼
 	  */
 	 public void transfer(int from, int to, double amount){
 		 
@@ -34,30 +34,31 @@ public class EnergySystem {
 			 
 //			 if (energyBoxes[from] < amount)
 //				 return;
-			//whileÑ­»·£¬±£Ö¤Ìõ¼ş²»Âú×ãÊ±ÈÎÎñ¶¼»á±»Ìõ¼ş×èµ²
-			 //¶ø²»ÊÇ¼ÌĞø¾ºÕùCPU×ÊÔ´
+			//whileå¾ªç¯ï¼Œä¿è¯æ¡ä»¶ä¸æ»¡è¶³æ—¶ä»»åŠ¡éƒ½ä¼šè¢«æ¡ä»¶é˜»æŒ¡
+			 //è€Œä¸æ˜¯ç»§ç»­ç«äº‰CPUèµ„æº
 			 while (energyBoxes[from] < amount){
 				 try {
-					//Ìõ¼ş²»Âú×ã, ½«µ±Ç°Ïß³Ì·ÅÈëWait Set
+					//æ¡ä»¶ä¸æ»¡è¶³, å°†å½“å‰çº¿ç¨‹æ”¾å…¥Wait Set
 					lockObj.wait();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			 }
 			 
+			 
 			 System.out.print(Thread.currentThread().getName());
 			 energyBoxes[from] -= amount;
-			 System.out.printf("´Ó%d×ªÒÆ%10.2fµ¥Î»ÄÜÁ¿µ½%d", from, amount, to);
+			 System.out.printf("ä»%dè½¬ç§»%10.2få•ä½èƒ½é‡åˆ°%d", from, amount, to);
 			 energyBoxes[to] += amount;
-			 System.out.printf(" ÄÜÁ¿×ÜºÍ£º%10.2f%n", getTotalEnergies());
-			//»½ĞÑËùÓĞÔÚlockObj¶ÔÏóÉÏµÈ´ıµÄÏß³Ì
+			 System.out.printf(" èƒ½é‡æ€»å’Œï¼š%10.2f%n", getTotalEnergies());
+			//å”¤é†’æ‰€æœ‰åœ¨lockObjå¯¹è±¡ä¸Šç­‰å¾…çš„çº¿ç¨‹
 			 lockObj.notifyAll();
 		 }
 		 
 	 }
 	 
 	 /**
-	  * »ñÈ¡ÄÜÁ¿ÊÀ½çµÄÄÜÁ¿×ÜºÍ 
+	  * è·å–èƒ½é‡ä¸–ç•Œçš„èƒ½é‡æ€»å’Œ 
 	  */
 	 public double getTotalEnergies(){
 		 double sum = 0;
@@ -67,7 +68,7 @@ public class EnergySystem {
 	 }
 	 
 	 /**
-	  * ·µ»ØÄÜÁ¿ºĞ×ÓµÄ³¤¶È
+	  * è¿”å›èƒ½é‡ç›’å­çš„é•¿åº¦
 	  */
 	 public  int getBoxAmount(){
 		 return energyBoxes.length;

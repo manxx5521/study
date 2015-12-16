@@ -8,17 +8,17 @@ public class Test {
         String password = "password";
         
         /*
-         * 这个里根据loginType类型的不同创建不同Login对象
+         * 杩欎釜閲屾牴鎹甽oginType绫诲瀷鐨勪笉鍚屽垱寤轰笉鍚孡ogin瀵硅薄
          */
         Login login = LoginManager.factory(loginType);
         boolean bool = login.verify(name, password);
         if (bool) {
             /**
-             * 业务逻辑
+             * 涓氬姟閫昏緫
              */
         } else {
             /**
-             * 业务逻辑
+             * 涓氬姟閫昏緫
              */
         }
     }

@@ -2,7 +2,7 @@ package com.base.factory.abstrFactory;
 
 public class IntelCpu implements Cpu {
     /**
-     * CPUµÄÕë½ÅÊý
+     * CPUçš„é’ˆè„šæ•°
      */
     private int pins = 0;
     
@@ -12,7 +12,7 @@ public class IntelCpu implements Cpu {
     @Override
     public void calculate() {
         // TODO Auto-generated method stub
-        System.out.println("Intel CPUµÄÕë½ÅÊý£º" + pins);
+        System.out.println("Intel CPUçš„é’ˆè„šæ•°ï¼š" + pins);
     }
 
 }

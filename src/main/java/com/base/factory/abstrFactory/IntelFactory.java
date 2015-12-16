@@ -1,6 +1,6 @@
 package com.base.factory.abstrFactory;
 /**
- * 创建Intel家族的工厂类
+ * 鍒涘缓Intel瀹舵棌鐨勫伐鍘傜被
  */
 public class IntelFactory implements AbstractFactory {
 

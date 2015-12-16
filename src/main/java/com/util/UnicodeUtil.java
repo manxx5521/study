@@ -5,7 +5,7 @@ import java.io.UnsupportedEncodingException;
 public class UnicodeUtil {
 	public static void main(String[] args) throws UnsupportedEncodingException {
 
-		String s = "»áÒéĞÅÏ¢Ìí¼Ó³É¹¦";
+		String s = "ä¼šè®®ä¿¡æ¯æ·»åŠ æˆåŠŸ";
 
 		System.out.println("Original:\t\t" + s);
 
@@ -32,7 +32,7 @@ public class UnicodeUtil {
 
 	/**
 	 * 
-	 * ½«×Ö·û´®±àÂë³É Unicode ĞÎÊ½µÄ×Ö·û´®. Èç "»Æ" to "\u9EC4"
+	 * å°†å­—ç¬¦ä¸²ç¼–ç æˆ Unicode å½¢å¼çš„å­—ç¬¦ä¸². å¦‚ "é»„" to "\u9EC4"
 	 * 
 	 * Converts unicodes to encoded \\uxxxx and escapes
 	 * 
@@ -42,13 +42,13 @@ public class UnicodeUtil {
 	 * 
 	 * @param theString
 	 * 
-	 *            ´ı×ª»»³ÉUnicode±àÂëµÄ×Ö·û´®¡£
+	 *            å¾…è½¬æ¢æˆUnicodeç¼–ç çš„å­—ç¬¦ä¸²ã€‚
 	 * 
 	 * @param escapeSpace
 	 * 
-	 *            ÊÇ·ñºöÂÔ¿Õ¸ñ£¬ÎªtrueÊ±ÔÚ¿Õ¸ñºóÃæÊÇ·ñ¼Ó¸ö·´Ğ±¸Ü¡£
+	 *            æ˜¯å¦å¿½ç•¥ç©ºæ ¼ï¼Œä¸ºtrueæ—¶åœ¨ç©ºæ ¼åé¢æ˜¯å¦åŠ ä¸ªåæ–œæ ã€‚
 	 * 
-	 * @return ·µ»Ø×ª»»ºóUnicode±àÂëµÄ×Ö·û´®¡£
+	 * @return è¿”å›è½¬æ¢åUnicodeç¼–ç çš„å­—ç¬¦ä¸²ã€‚
 	 */
 
 	public static String toEncodedUnicode(String theString, boolean escapeSpace) {
@@ -152,7 +152,7 @@ public class UnicodeUtil {
 
 				if ((aChar < 0x0020) || (aChar > 0x007e)) {
 
-					// Ã¿¸öunicodeÓĞ16Î»£¬Ã¿ËÄÎ»¶ÔÓ¦µÄ16½øÖÆ´Ó¸ßÎ»±£´æµ½µÍÎ»
+					// æ¯ä¸ªunicodeæœ‰16ä½ï¼Œæ¯å››ä½å¯¹åº”çš„16è¿›åˆ¶ä»é«˜ä½ä¿å­˜åˆ°ä½ä½
 
 					outBuffer.append('\\');
 
@@ -182,7 +182,7 @@ public class UnicodeUtil {
 
 	/**
 	 * 
-	 * ´Ó Unicode ĞÎÊ½µÄ×Ö·û´®×ª»»³É¶ÔÓ¦µÄ±àÂëµÄÌØÊâ×Ö·û´®¡£ Èç "\u9EC4" to "»Æ".
+	 * ä» Unicode å½¢å¼çš„å­—ç¬¦ä¸²è½¬æ¢æˆå¯¹åº”çš„ç¼–ç çš„ç‰¹æ®Šå­—ç¬¦ä¸²ã€‚ å¦‚ "\u9EC4" to "é»„".
 	 * 
 	 * Converts encoded \\uxxxx to unicode chars
 	 * 
@@ -192,28 +192,28 @@ public class UnicodeUtil {
 	 * 
 	 * @param in
 	 * 
-	 *            Unicode±àÂëµÄ×Ö·ûÊı×é¡£
+	 *            Unicodeç¼–ç çš„å­—ç¬¦æ•°ç»„ã€‚
 	 * 
 	 * @param off
 	 * 
-	 *            ×ª»»µÄÆğÊ¼Æ«ÒÆÁ¿¡£
+	 *            è½¬æ¢çš„èµ·å§‹åç§»é‡ã€‚
 	 * 
 	 * @param len
 	 * 
-	 *            ×ª»»µÄ×Ö·û³¤¶È¡£
+	 *            è½¬æ¢çš„å­—ç¬¦é•¿åº¦ã€‚
 	 * 
 	 * @param convtBuf
 	 * 
-	 *            ×ª»»µÄ»º´æ×Ö·ûÊı×é¡£
+	 *            è½¬æ¢çš„ç¼“å­˜å­—ç¬¦æ•°ç»„ã€‚
 	 * 
-	 * @return Íê³É×ª»»£¬·µ»Ø±àÂëÇ°µÄÌØÊâ×Ö·û´®¡£
+	 * @return å®Œæˆè½¬æ¢ï¼Œè¿”å›ç¼–ç å‰çš„ç‰¹æ®Šå­—ç¬¦ä¸²ã€‚
 	 */
 
 	public static String fromEncodedUnicode(char[] in, int off, int len) {
 
 		char aChar;
 
-		char[] out = new char[len]; // Ö»¶Ì²»³¤
+		char[] out = new char[len]; // åªçŸ­ä¸é•¿
 
 		int outLen = 0;
 

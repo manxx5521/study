@@ -5,42 +5,42 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 /**
- * Ê±¼ä¹¤¾ßÀà
+ * æ—¶é—´å·¥å…·ç±»
  * @author mxv
  *
  */
 public class DateUtil {
 	/**
-	 * Í¨¹ıÈÕÀúÀà»ñµÃÄê·İ
+	 * é€šè¿‡æ—¥å†ç±»è·å¾—å¹´ä»½
 	 * */
 	public String getYear(){
-		//»ñµÃÈÕÀúÀà
+		//è·å¾—æ—¥å†ç±»
 		Calendar cal = Calendar.getInstance();  
-		//¸ñÊ½³ÉÄê
+		//æ ¼å¼æˆå¹´
 		SimpleDateFormat dateformat = new SimpleDateFormat("yyyy");
-		//×ª»»³É×Ö·û´®
+		//è½¬æ¢æˆå­—ç¬¦ä¸²
 		String datetemp=dateformat.format(cal.getTime());
 		return datetemp;
 	}
 	
 	/**
-	 * ·µ»ØÊ±¼äµÄ16Î»Êı
+	 * è¿”å›æ—¶é—´çš„16ä½æ•°
 	 * @return
 	 */
 	public String getDateNumber(){
-		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//¶¨Òå¸ñÊ½£¬²»ÏÔÊ¾ºÁÃë
-		Timestamp now = new Timestamp(System.currentTimeMillis());//»ñÈ¡ÏµÍ³µ±Ç°Ê±¼ä
+		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//å®šä¹‰æ ¼å¼ï¼Œä¸æ˜¾ç¤ºæ¯«ç§’
+		Timestamp now = new Timestamp(System.currentTimeMillis());//è·å–ç³»ç»Ÿå½“å‰æ—¶é—´
 		return df.format(now);
 	}
 	
 	/**
-	 * ·µ»Øµ±Ç°Ê±¼äµÄ×Ö·û´®
+	 * è¿”å›å½“å‰æ—¶é—´çš„å­—ç¬¦ä¸²
 	 * @return
 	 */
 	public String getDate(){
 		Date date=new Date();
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMM");  //¸ñÊ½»¯ÈÕÆÚ   yyyy/MM/dd HH:mm:ss
-		String currentTime=sdf.format(date);  //´æµ½×Ö·û´®
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMM");  //æ ¼å¼åŒ–æ—¥æœŸ   yyyy/MM/dd HH:mm:ss
+		String currentTime=sdf.format(date);  //å­˜åˆ°å­—ç¬¦ä¸²
 		return currentTime;
 	}
 	

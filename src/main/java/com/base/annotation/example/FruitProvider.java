@@ -7,7 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Ë®¹û¹©Ó¦Õß×¢½â
+ * æ°´æœä¾›åº”è€…æ³¨è§£
  * @author peida
  *
  */
@@ -16,19 +16,19 @@ import java.lang.annotation.Target;
 @Documented
 public @interface FruitProvider {
     /**
-     * ¹©Ó¦ÉÌ±àºÅ
+     * ä¾›åº”å•†ç¼–å·
      * @return
      */
     public int id() default -1;
     
     /**
-     * ¹©Ó¦ÉÌÃû³Æ
+     * ä¾›åº”å•†åç§°
      * @return
      */
     public String name() default "";
     
     /**
-     * ¹©Ó¦ÉÌµØÖ·
+     * ä¾›åº”å•†åœ°å€
      * @return
      */
     public String address() default "";

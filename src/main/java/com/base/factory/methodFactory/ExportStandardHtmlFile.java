@@ -6,9 +6,9 @@ public class ExportStandardHtmlFile implements ExportFile{
     public boolean export(String data) {
         // TODO Auto-generated method stub
         /**
-         * 业务逻辑
+         * 涓氬姟閫昏緫
          */
-        System.out.println("导出标准HTML文件");
+        System.out.println("瀵煎嚭鏍囧噯HTML鏂囦欢");
         return true;
     }
 

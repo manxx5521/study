@@ -4,27 +4,27 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
 /**
- *	ÏÂ±ßµÄ×¢½â¿ÉÒÔÎªµ¥¶ÀµÄÀà
+ *	ä¸‹è¾¹çš„æ³¨è§£å¯ä»¥ä¸ºå•ç‹¬çš„ç±»
  */
 public class targetExample {
 	
 	
 	/*
-	 * ×÷ÓÃ£ºÓÃÓÚÃèÊö×¢½âµÄÊ¹ÓÃ·¶Î§£¨¼´£º±»ÃèÊöµÄ×¢½â¿ÉÒÔÓÃÔÚÊ²Ã´µØ·½£©
-	È¡Öµ(ElementType)ÓÐ£º
+	 * ä½œç”¨ï¼šç”¨äºŽæè¿°æ³¨è§£çš„ä½¿ç”¨èŒƒå›´ï¼ˆå³ï¼šè¢«æè¿°çš„æ³¨è§£å¯ä»¥ç”¨åœ¨ä»€ä¹ˆåœ°æ–¹ï¼‰
+	å–å€¼(ElementType)æœ‰ï¼š
 
-¡¡¡¡¡¡¡¡1.CONSTRUCTOR:ÓÃÓÚÃèÊö¹¹ÔìÆ÷
-¡¡¡¡¡¡¡¡2.FIELD:ÓÃÓÚÃèÊöÓò
-¡¡¡¡¡¡¡¡3.LOCAL_VARIABLE:ÓÃÓÚÃèÊö¾Ö²¿±äÁ¿
-¡¡¡¡¡¡¡¡4.METHOD:ÓÃÓÚÃèÊö·½·¨
-¡¡¡¡¡¡¡¡5.PACKAGE:ÓÃÓÚÃèÊö°ü
-¡¡¡¡¡¡¡¡6.PARAMETER:ÓÃÓÚÃèÊö²ÎÊý
-¡¡¡¡¡¡¡¡7.TYPE:ÓÃÓÚÃèÊöÀà¡¢½Ó¿Ú(°üÀ¨×¢½âÀàÐÍ) »òenumÉùÃ÷
+ã€€ã€€ã€€ã€€1.CONSTRUCTOR:ç”¨äºŽæè¿°æž„é€ å™¨
+ã€€ã€€ã€€ã€€2.FIELD:ç”¨äºŽæè¿°åŸŸ
+ã€€ã€€ã€€ã€€3.LOCAL_VARIABLE:ç”¨äºŽæè¿°å±€éƒ¨å˜é‡
+ã€€ã€€ã€€ã€€4.METHOD:ç”¨äºŽæè¿°æ–¹æ³•
+ã€€ã€€ã€€ã€€5.PACKAGE:ç”¨äºŽæè¿°åŒ…
+ã€€ã€€ã€€ã€€6.PARAMETER:ç”¨äºŽæè¿°å‚æ•°
+ã€€ã€€ã€€ã€€7.TYPE:ç”¨äºŽæè¿°ç±»ã€æŽ¥å£(åŒ…æ‹¬æ³¨è§£ç±»åž‹) æˆ–enumå£°æ˜Ž
 	 */
 	@Target(ElementType.TYPE)
 	public @interface Table {
 	    /**
-	     * Êý¾Ý±íÃû³Æ×¢½â£¬Ä¬ÈÏÖµÎªÀàÃû³Æ
+	     * æ•°æ®è¡¨åç§°æ³¨è§£ï¼Œé»˜è®¤å€¼ä¸ºç±»åç§°
 	     * @return
 	     */
 	    public String tableName() default "className";
@@ -35,6 +35,6 @@ public class targetExample {
 
 	}
 	
-	//×¢½âTable ¿ÉÒÔÓÃÓÚ×¢½âÀà¡¢½Ó¿Ú(°üÀ¨×¢½âÀàÐÍ) »òenumÉùÃ÷,¶ø×¢½âNoDBColumn½ö¿ÉÓÃÓÚ×¢½âÀàµÄ³ÉÔ±±äÁ¿¡£
+	//æ³¨è§£Table å¯ä»¥ç”¨äºŽæ³¨è§£ç±»ã€æŽ¥å£(åŒ…æ‹¬æ³¨è§£ç±»åž‹) æˆ–enumå£°æ˜Ž,è€Œæ³¨è§£NoDBColumnä»…å¯ç”¨äºŽæ³¨è§£ç±»çš„æˆå‘˜å˜é‡ã€‚
 
 }

@@ -3,7 +3,7 @@ package com.base.annotation;
 import java.lang.annotation.Inherited;
 
 public class InheritedExample {
-	//@Inherited Ôª×¢½âÊÇÒ»¸ö±ê¼Ç×¢½â£¬@Inherited²ûÊöÁËÄ³¸ö±»±ê×¢µÄÀàĞÍÊÇ±»¼Ì³ĞµÄ¡£
+	//@Inherited å…ƒæ³¨è§£æ˜¯ä¸€ä¸ªæ ‡è®°æ³¨è§£ï¼Œ@Inheritedé˜è¿°äº†æŸä¸ªè¢«æ ‡æ³¨çš„ç±»å‹æ˜¯è¢«ç»§æ‰¿çš„ã€‚
 	
 	@Inherited
 	public @interface Greeting {

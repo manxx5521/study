@@ -2,21 +2,21 @@ package com.module.mail;
 
 public class Testmail {
 	public static void main(String[] args){  
-        //Õâ¸öÀàÖ÷ÒªÊÇÉèÖÃÓÊ¼ş  
+        //è¿™ä¸ªç±»ä¸»è¦æ˜¯è®¾ç½®é‚®ä»¶  
      MailSenderInfo mailInfo = new MailSenderInfo();   
      mailInfo.setMailServerHost("smtp.163.com");   
      mailInfo.setMailServerPort("25");   
      mailInfo.setValidate(true);   
      mailInfo.setUserName("manxx5521@163.com");   
-     //163ÏÖÔÚµÇÂ¼ÎªÊÚÈ¨ÃÜÂë£¬ĞèÒªÍ¨¹ıÍøÒ×ÓÊÏä»ñÈ¡
-     mailInfo.setPassword("uljbpgpjqihneled");//ÄúµÄÓÊÏäÃÜÂë   
+     //163ç°åœ¨ç™»å½•ä¸ºæˆæƒå¯†ç ï¼Œéœ€è¦é€šè¿‡ç½‘æ˜“é‚®ç®±è·å–
+     mailInfo.setPassword("uljbpgpjqihneled");//æ‚¨çš„é‚®ç®±å¯†ç    
      mailInfo.setFromAddress("manxx5521@163.com");   
      mailInfo.setToAddress("382752556@qq.com");   
-     mailInfo.setSubject("ÉèÖÃÓÊÏä±êÌâ");   
-     mailInfo.setContent("ÉèÖÃÓÊÏäÄÚÈİ");   
-        //Õâ¸öÀàÖ÷ÒªÀ´·¢ËÍÓÊ¼ş  
+     mailInfo.setSubject("è®¾ç½®é‚®ç®±æ ‡é¢˜");   
+     mailInfo.setContent("è®¾ç½®é‚®ç®±å†…å®¹");   
+        //è¿™ä¸ªç±»ä¸»è¦æ¥å‘é€é‚®ä»¶  
      SimpleMailSender sms = new SimpleMailSender();
-         sms.sendTextMail(mailInfo);//·¢ËÍÎÄÌå¸ñÊ½   
-         sms.sendHtmlMail(mailInfo);//·¢ËÍhtml¸ñÊ½  
+         sms.sendTextMail(mailInfo);//å‘é€æ–‡ä½“æ ¼å¼   
+         sms.sendHtmlMail(mailInfo);//å‘é€htmlæ ¼å¼  
    }  
 }

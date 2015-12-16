@@ -18,51 +18,51 @@ public class SFTPChannel {
 	private static final Logger LOG = Logger.getLogger(SFTPChannel.class.getName());
 	
 	/**
-	 * Ê¹ÓÃsftpÉÏ´«ÎÄ¼ş<br>
-	 * Í¨¹ıÖ¸¶¨µÄtopath´«µ½ÎÄ¼ş
-	 * @param fileName ÎÄ¼şÃû
+	 * ä½¿ç”¨sftpä¸Šä¼ æ–‡ä»¶<br>
+	 * é€šè¿‡æŒ‡å®šçš„topathä¼ åˆ°æ–‡ä»¶
+	 * @param fileName æ–‡ä»¶å
 	 * @return
 	 * @throws Exception
 	 */
 	public boolean put(String fileName)throws Exception {
 		/**
-		 * sftpÅäÖÃÎÄ¼şµÄÄÚÈİÊµÀı
+		 * sftpé…ç½®æ–‡ä»¶çš„å†…å®¹å®ä¾‹
 		 */
 		SFTPConstants context =SFTPConstants.getInstance();
 
-		JSch jsch = new JSch(); // ´´½¨JSch¶ÔÏó
-		session = jsch.getSession(context.getSftp_username(), context.getSftp_host(),context.getSftp_port()); // ¸ù¾İÓÃ»§Ãû£¬Ö÷»úip£¬¶Ë¿Ú»ñÈ¡Ò»¸öSession¶ÔÏó
+		JSch jsch = new JSch(); // åˆ›å»ºJSchå¯¹è±¡
+		session = jsch.getSession(context.getSftp_username(), context.getSftp_host(),context.getSftp_port()); // æ ¹æ®ç”¨æˆ·åï¼Œä¸»æœºipï¼Œç«¯å£è·å–ä¸€ä¸ªSessionå¯¹è±¡
 		LOG.debug("Session created.");
 		session.setPassword(context.getSftp_password()); 
 		
 		Properties config = new Properties();
-		config.put("StrictHostKeyChecking", "no");  //´ËÊôĞÔÉèÖÃÎªno£¬»á½«ssh key×Ô¶¯Ìí¼Óµ½ÏµÍ³Â·¾¶
-		session.setConfig(config); // ÎªSession¶ÔÏóÉèÖÃproperties
-		session.setTimeout(context.getSftp_timeout()); // ÉèÖÃtimeoutÊ±¼ä
-		session.connect(); // Í¨¹ıSession½¨Á¢Á´½Ó
+		config.put("StrictHostKeyChecking", "no");  //æ­¤å±æ€§è®¾ç½®ä¸ºnoï¼Œä¼šå°†ssh keyè‡ªåŠ¨æ·»åŠ åˆ°ç³»ç»Ÿè·¯å¾„
+		session.setConfig(config); // ä¸ºSessionå¯¹è±¡è®¾ç½®properties
+		session.setTimeout(context.getSftp_timeout()); // è®¾ç½®timeoutæ—¶é—´
+		session.connect(); // é€šè¿‡Sessionå»ºç«‹é“¾æ¥
 		LOG.debug("Session connected.");
 
 		LOG.debug("Opening Channel.");
-		channel = session.openChannel("sftp"); // ´ò¿ªSFTPÍ¨µÀ
-		channel.connect(); // ½¨Á¢SFTPÍ¨µÀµÄÁ¬½Ó
+		channel = session.openChannel("sftp"); // æ‰“å¼€SFTPé€šé“
+		channel.connect(); // å»ºç«‹SFTPé€šé“çš„è¿æ¥
 		LOG.debug("Connected successfully to ftpHost = " + context.getSftp_host()
 				+ ",as ftpUserName = " + context.getSftp_username() + ", returning: "
 				+ channel);
-		//»ñµÃftpÊµÀı¿ÉÒÔ½øĞĞÊµ¼Ê²Ù×÷
+		//è·å¾—ftpå®ä¾‹å¯ä»¥è¿›è¡Œå®é™…æ“ä½œ
 		ChannelSftp sftp=(ChannelSftp) channel;
 		sftp.cd(context.getSftp_toPath());
 		String path=context.getSftp_fromParth();
-		//»ñÈ¡ÏµÍ³Â·¾¶·Ö¸ô·û
+		//è·å–ç³»ç»Ÿè·¯å¾„åˆ†éš”ç¬¦
 		String separator=File.separator;
 		if(!path.endsWith(separator)){
 			path=path+separator;
 		}
-		//´«ÎÄ¼ş,µÚÒ»¸ö²ÎÊıµÄÊÇÈ¡ÎÄ¼şµÄÄ¿Â¼£¬µÚ¶ş¸öÊÇ·Åµ½µÄÎÄ¼şÄ¿Â¼
-		//£¨±¾·½·¨ÊÇ½øÈëÄ¿Â¼ºóÔÙ·Å£¬¿ÉÒÔÖ±½ÓÈ¥¸øÈ«Ä¿Â¼£¬Ö±½Ó·Åµ½Ä¿Â¼ÏÂ£©
+		//ä¼ æ–‡ä»¶,ç¬¬ä¸€ä¸ªå‚æ•°çš„æ˜¯å–æ–‡ä»¶çš„ç›®å½•ï¼Œç¬¬äºŒä¸ªæ˜¯æ”¾åˆ°çš„æ–‡ä»¶ç›®å½•
+		//ï¼ˆæœ¬æ–¹æ³•æ˜¯è¿›å…¥ç›®å½•åå†æ”¾ï¼Œå¯ä»¥ç›´æ¥å»ç»™å…¨ç›®å½•ï¼Œç›´æ¥æ”¾åˆ°ç›®å½•ä¸‹ï¼‰
 		sftp.put(new FileInputStream(path+fileName),fileName,ChannelSftp.OVERWRITE);
-		//ÍË³ö
+		//é€€å‡º
 		sftp.quit();
-		//¹Ø±Õ×ÊÔ´ 
+		//å…³é—­èµ„æº 
         closeChannel();
 		return true;
 	}

@@ -1,9 +1,9 @@
 package com.base.factory.simpleFactory;
 /**
- * µÇÂ¼¹¤³§Àà<br>
- * ×î¼òµ¥µÄ¹¤³§Ä£Ê½<br>
- * 	Õâ¸öÓÃÀ´¹ÜÀí£¬Login½Ó¿ÚµÄÊµÏÖÀà¡£DomainLoginºÍPasswordLogin
- *	¸ù¾İµ÷ÓÃÕß²»Í¬µÄÒªÇó£¬´´½¨³ö²»Í¬µÄµÇÂ¼¶ÔÏó²¢·µ»Ø
+ * ç™»å½•å·¥å‚ç±»<br>
+ * æœ€ç®€å•çš„å·¥å‚æ¨¡å¼<br>
+ * 	è¿™ä¸ªç”¨æ¥ç®¡ç†ï¼ŒLoginæ¥å£çš„å®ç°ç±»ã€‚DomainLoginå’ŒPasswordLogin
+ *	æ ¹æ®è°ƒç”¨è€…ä¸åŒçš„è¦æ±‚ï¼Œåˆ›å»ºå‡ºä¸åŒçš„ç™»å½•å¯¹è±¡å¹¶è¿”å›
  */
 public class LoginManager {
     public static Login factory(String type){
@@ -17,9 +17,9 @@ public class LoginManager {
             
         }else{
             /**
-             * ÕâÀïÅ×³öÒ»¸ö×Ô¶¨ÒåÒì³£»á¸üÇ¡µ±
+             * è¿™é‡ŒæŠ›å‡ºä¸€ä¸ªè‡ªå®šä¹‰å¼‚å¸¸ä¼šæ›´æ°å½“
              */
-            throw new RuntimeException("Ã»ÓĞÕÒµ½µÇÂ¼ÀàĞÍ");
+            throw new RuntimeException("æ²¡æœ‰æ‰¾åˆ°ç™»å½•ç±»å‹");
         }
     }
 }

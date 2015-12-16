@@ -1,19 +1,19 @@
 package com.base.factory.abstrFactory;
 
 /**
- * ³éÏó¹¤³§Àà
+ * æŠ½è±¡å·¥å‚ç±»
  * @author mxv
  *
  */
 public interface AbstractFactory {
     /**
-     * ´´½¨CPU¶ÔÏó
-     * @return CPU¶ÔÏó
+     * åˆ›å»ºCPUå¯¹è±¡
+     * @return CPUå¯¹è±¡
      */
     public Cpu createCpu();
     /**
-     * ´´½¨Ö÷°å¶ÔÏó
-     * @return Ö÷°å¶ÔÏó
+     * åˆ›å»ºä¸»æ¿å¯¹è±¡
+     * @return ä¸»æ¿å¯¹è±¡
      */
     public Mainboard createMainboard();
 }

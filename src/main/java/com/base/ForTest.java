@@ -1,6 +1,6 @@
 package com.base;
 /**
- * Ñ­»·µÄÊ¹ÓÃ£¬ÃªµÄÊ¹ÓÃ
+ * å¾ªç¯çš„ä½¿ç”¨ï¼Œé”šçš„ä½¿ç”¨
  */
 public class ForTest {
 
@@ -11,23 +11,23 @@ public class ForTest {
 				System.out.println("j:" + j);
 				
 				if (j == 10) {
-					System.out.println("Ìø³ö±¾´ÎÑ­»·:" + j);
+					System.out.println("è·³å‡ºæœ¬æ¬¡å¾ªç¯:" + j);
 					continue;
 				}
 				if (i == 4) {
-					System.out.println("Ìø³öjÑ­»·:" + j);
+					System.out.println("è·³å‡ºjå¾ªç¯:" + j);
 					break mb;
 				}
 
 				if (i == 6) {
-					System.out.println("Ìø³öiÑ­»·:" + j);
+					System.out.println("è·³å‡ºiå¾ªç¯:" + j);
 					break ma;
 				}
-				System.out.println("²Ù×÷jÑ­»·:" + j);
+				System.out.println("æ“ä½œjå¾ªç¯:" + j);
 			}
-			System.out.println("²Ù×÷iÑ­»·:" + i);
+			System.out.println("æ“ä½œiå¾ªç¯:" + i);
 		}
-	System.out.println("ËùÓĞ²Ù×÷Íê³É");
+	System.out.println("æ‰€æœ‰æ“ä½œå®Œæˆ");
 	}
 
 	public static void main(String[] args) {

@@ -1,12 +1,12 @@
 package com.base.classnew;
 /**
- * ����������ʵ��1
+ * 变量创建，实例1
  */
 /*
- *3��������г�ʼ�������γ�ʼ������new��getstatic��putstatic������invokestatic ��4���ֽ��롣
- *	��ʼ����ʱ�����������̬����������̬���������������ʱ�����static Insect.x1 initialized�������static{} Ҳ��ִ�С�
- *	3��ִ�о�̬�����ĳ�ʼ��ʱ���ᰴ�Ⱥ�˳�򴴽�
- *	��ʼ����ʱ��ִ�й��췽�������췽����ʵ������ʱ��ִ��
+ *3、父类进行初始化，本次初始化触发new、getstatic、putstatic、或者invokestatic 这4条字节码。
+ *	初始化的时候会先整理静态变量，将静态变量创建到堆里。此时会输出static Insect.x1 initialized。如果有static{} 也会执行。
+ *	3步执行静态变量的初始化时，会按先后顺序创建
+ *	初始化的时候不执行构造方法，构造方法在实例话的时候执行
  */
 public class Insect {
 	private int i = 9;
@@ -18,10 +18,10 @@ public class Insect {
 	}
 	
 	/*
-	 * 6��ִ�и��๹��
+	 * 6、执行父类构造
 	 */
 	Insect() {
-		System.out.println("���๹�캯���׶Σ� i = " + i + ", j = " + j);
+		System.out.println("基类构造函数阶段： i = " + i + ", j = " + j);
 		j = 39;
 	}
 
