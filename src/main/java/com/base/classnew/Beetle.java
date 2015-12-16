@@ -30,5 +30,6 @@ public class Beetle extends Insect {
 		 * 	子类构造时会自动调用父类构造
 		 */
 		Beetle b = new Beetle();
+		System.out.println(b.toString());
 	}
 }
