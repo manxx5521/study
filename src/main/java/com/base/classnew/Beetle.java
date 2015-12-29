@@ -29,8 +29,6 @@ public class Beetle extends Insect {
 		 * 5、实例化Beetle类
 		 * 	子类构造时会自动调用父类构造
 		 */
-		@SuppressWarnings("unused")
 		Beetle b = new Beetle();
-		
 	}
 }
