@@ -5,9 +5,5 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 id="WebApp_ID" version="3.0">
 
 	<display-name>个人测试项目</display-name>
-	<!--
-	<context-param>
-			<param-name>log4jConfigLocation</param-name>
-			<param-value>classpath:/log4j.properties</param-value>
-		</context-param>-->
+
 </web-app>
