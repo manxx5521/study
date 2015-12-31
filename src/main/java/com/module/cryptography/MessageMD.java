@@ -37,6 +37,7 @@ public class MessageMD {
 		
 		String md51=DigestUtils.md5Hex(src.getBytes());
 		
+		//11
 		System.out.println("commons md5:"+md51);
 	}
 
