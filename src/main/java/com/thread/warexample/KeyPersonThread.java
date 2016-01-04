@@ -1,5 +1,9 @@
 package com.thread.warexample;
 
+/**
+ * 关键任务进程
+ * <p>关键人物出场后、其他任务要停止攻击</p>
+ */
 public class KeyPersonThread extends Thread {
 
 	@Override

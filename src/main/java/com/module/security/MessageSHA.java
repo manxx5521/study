@@ -1,4 +1,4 @@
-package com.module.cryptography;
+package com.module.security;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

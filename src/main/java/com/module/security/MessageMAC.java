@@ -1,4 +1,4 @@
-package com.module.cryptography;
+package com.module.security;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;

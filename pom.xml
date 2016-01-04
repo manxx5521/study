@@ -80,4 +80,5 @@
 	<build>
 		<finalName>study-example</finalName>
 	</build>
+	<description>github url: https://github.com/manxx5521/study-example.git</description>
 </project>
