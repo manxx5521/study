@@ -18,10 +18,13 @@ public class ImoocHmac {
 	
 	public static void jdkHmacMD5() {
 		try {
+			
 			KeyGenerator keyGenerator = KeyGenerator.getInstance("HmacMD5");//初始化KeyGenerator
 			SecretKey secretKey = keyGenerator.generateKey();//产生密钥
-//			byte[] key = secretKey.getEncoded();//获得密钥
-			byte[] key = Hex.decodeHex(new char[] {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'});
+			byte[] key = secretKey.getEncoded();//获得密钥
+			
+			//产生密钥可用下边的方式
+//			byte[] key = Hex.decodeHex(new char[] {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'});
 			
 			SecretKey restoreSecretKey = new SecretKeySpec(key, "HmacMD5");//还原密钥
 			Mac mac = Mac.getInstance(restoreSecretKey.getAlgorithm());//实例化MAC

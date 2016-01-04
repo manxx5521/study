@@ -6,6 +6,7 @@ public class ImoocIDEA {
 	private static String src = "imooc security idea";
 
 	public static void main(String[] args) {
+		System.out.println(src);
 //		bcIDEA();
 	}
 	/*
