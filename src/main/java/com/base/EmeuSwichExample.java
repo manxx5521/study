@@ -30,7 +30,7 @@ public class EmeuSwichExample {
 		String message=null;
 		switch (type) {
 		case JDBC:
-			message="jdbc";
+			message=type.name();;
 			break;
 		case HIBERNATE:
 			message="hibernate";

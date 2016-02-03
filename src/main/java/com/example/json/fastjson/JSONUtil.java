@@ -5,6 +5,7 @@ import java.util.Date;
 import org.junit.Test;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.example.json.PersionBean;
 
@@ -83,5 +84,10 @@ public class JSONUtil {
 		 PersionBean n2= JSON.parseObject(text,PersionBean.class);
 		 
 		 System.out.println("反序列化输出："+n2.toString());
+		 
+		 
+		 //获得JSONObject的方法
+		 JSONObject b=JSON.parseObject(n2.toString());
+		 b.getString("name");
 	}
 }

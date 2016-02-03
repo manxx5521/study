@@ -34,7 +34,7 @@ public class Base64 {
 	public void getCommonsCodesBase64(){
 		String src="manxx";
 		//加密
-		byte[] encodeBytes=org.apache.tomcat.util.codec.binary.Base64.encodeBase64(src.getBytes());
+		byte[] encodeBytes=org.apache.commons.codec.binary.Base64.encodeBase64(src.getBytes());
 		
 		//解密
 		byte[] decodeBytes=org.apache.commons.codec.binary.Base64.decodeBase64(encodeBytes);
