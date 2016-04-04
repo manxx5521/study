@@ -88,6 +88,7 @@ public class FileUtilsTest {
 	@Test
 	public void testRead() throws IOException {
 		File srcFile = new File(basePath + "a.txt");
+//		FileUtils.readFileToByteArray(file)
 		String content = FileUtils.readFileToString(srcFile);
 		List<String> contents = FileUtils.readLines(srcFile);
 		System.out.println(content);
