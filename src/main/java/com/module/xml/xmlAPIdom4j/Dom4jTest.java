@@ -1,4 +1,4 @@
-package com.module.xml.dom4j;
+package com.module.xml.xmlAPIdom4j;
 
 import java.util.Iterator;
 import java.util.List;
@@ -11,6 +11,7 @@ import org.junit.Test;
 
 /**
  * dom4j解析方式
+ * 较为优秀的xmlAPI解析方式
  */
 public class Dom4jTest {
 

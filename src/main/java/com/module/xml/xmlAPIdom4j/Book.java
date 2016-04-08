@@ -1,4 +1,4 @@
-package com.module.xml.jdom;
+package com.module.xml.xmlAPIdom4j;
 
 public class Book {
 	private String id;

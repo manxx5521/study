@@ -1,4 +1,4 @@
-package com.module.xml.dom4j;
+package com.module.xml.xmlAPIdom4j;
 
 import java.io.FileOutputStream;
 import java.io.FileWriter;

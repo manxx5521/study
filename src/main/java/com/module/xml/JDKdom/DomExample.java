@@ -1,4 +1,4 @@
-package com.module.xml.dom;
+package com.module.xml.JDKdom;
 
 import java.io.IOException;
 
