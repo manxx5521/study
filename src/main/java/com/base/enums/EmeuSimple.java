@@ -1,4 +1,4 @@
-package com.base;
+package com.base.enums;
 
 import java.util.EnumMap;
 import java.util.EnumSet;

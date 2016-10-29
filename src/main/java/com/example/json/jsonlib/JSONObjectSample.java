@@ -57,6 +57,8 @@ public class JSONObjectSample {
 		JSONObject object = JSONObject.fromObject(temp);
 		// 转换后根据Key返回值
 		System.out.println("qq=" + object.get("QQ"));
+		
+		
 
 	}
 

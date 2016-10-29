@@ -5,7 +5,7 @@ import org.junit.Test;
 /**
  * 静态方法测试类
  */
-public class StaticClass {
+public class StaticTest {
 	
 	
 	/**
@@ -18,12 +18,7 @@ public class StaticClass {
 	
 	@Test
 	public void testS(){
-		StaticClass.testStatic();
-		StaticClass.testStatic();
-		StaticClass.testStatic();
-		StaticClass.testStatic();
-		StaticClass.testStatic();
-		StaticClass.testStatic();
+		StaticTest.testStatic();
 	}
 
 }

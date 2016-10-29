@@ -54,5 +54,9 @@ public class FileFilterTest {
 			System.out.println(file);
 		}
 	}
+	@Test
+	public void test1(){
+		File srcFile = new File("C:\\Users\\mxv\\Desktop\\Chromestable_52.0.2743.82.exe");
+	}
 
 }

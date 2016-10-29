@@ -3,6 +3,10 @@ package com.example.json.jsonlib;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.junit.Test;
+
+import com.example.json.PersionBean;
+
 /**
  * JSONArray 的使用
  */
@@ -40,5 +44,21 @@ public class JSONTest {
 		JSONObject jsonObj4 = new JSONObject();
 		jsonObj4.element("weather", jsonArray);
 		System.out.println("jsonObj4:" + jsonObj4);
+		
+	}
+	
+	//将bean转换成json
+	@Test
+	public void toJson(){
+		PersionBean bean = new PersionBean();
+		bean.setName("张三");
+		bean.setAge(11);
+		
+		JSONObject json = JSONObject.fromObject(bean);
+        System.out.println(json.toString()); 
+        
+        //再转成bean
+        PersionBean yuan=(PersionBean) JSONObject.toBean(json, PersionBean.class);
+        System.out.println(yuan.toString());
 	}
 }
